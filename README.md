@@ -1,16 +1,48 @@
-### Hi there 👋
+# Matt Carvin (mcarvin8)
 
-<!--
-**mcarvin8/mcarvin8** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Who am I?
 
-Here are some ideas to get you started:
+- DevOps Engineer @ Avalara supporting Release Management for Salesforce and Boomi
+- Rowan University alumnus
+- Eagles and Phillies fan
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+[![](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matthew-carvin)
+
+[![](https://raw.githubusercontent.com/npm/logos/master/npm%20square/n-64.png)](https://www.npmjs.com/~mcarvin)
+
+## Tech Stack
+
+- ![](https://img.shields.io/badge/GitLab-330F63?style=for-the-badge&logo=gitlab&logoColor=white)
+- ![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+- Salesforce
+- Boomi
+- Python
+- Bash
+- Batch
+- PowerShell
+- TypeScript
+
+## Open-Source Projects
+
+I have created these open-source projects so-far:
+
+- [SFDX Decomposer](#sfdx-decomposer)
+- [XML Disassembler](#xml-disassembler)
+- [Apex Code Coverage Transformer](#apex-code-coverage-transformer)
+- [Apex Tests Git Delta](#apex-tests-git-delta)
+
+### [sfdx-decomposer](https://github.com/mcarvin8/sfdx-decomposer-plugin)
+
+A plugin for Salesforce which breaks up large metadata files (XML) into smaller files for version control, including custom labels, workflows, permission sets, profiles, and a lot more.
+
+### [xml-disassembler](https://github.com/mcarvin8/xml-disassembler)
+
+A JavaScript package which can break down any XML file into smaller files for easier review and maintenance, then reassemble them as needed.
+
+### [apex-code-coverage-transformer](https://github.com/mcarvin8/apex-code-coverage-transformer)
+
+A plugin for Salesforce which creates Apex Code Coverage XML files compatible for SonarQube.
+
+### [apex-tests-git-delta](https://github.com/mcarvin8/sfdx-decomposer-plugin)
+
+A plugin for Salesforce which analyzes commit messages over a commit range for a user-defined regular expression and extracts Apex Tests for delta deployments.
