@@ -2,7 +2,7 @@
 
 - DevOps Engineer @ Avalara supporting SRE/DevOps/Release Management for Business Applications (Salesforce and Boomi)
 - Rowan University alumnus
-- (#RingThe🔔) **Phillies and Eagles Fan**
+- **Phillies and Eagles Fan** (#RingThe🔔)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
