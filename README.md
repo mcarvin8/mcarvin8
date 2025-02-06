@@ -13,8 +13,6 @@
 <h3 align="left">Support:</h3>
 <p><a href="https://www.buymeacoffee.com/mcarvin8"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="mcarvin8" /></a></p><br><br>
 
-![](https://i.pinimg.com/736x/0c/1c/84/0c1c848a1e99303762cbafa3ceaed81c.jpg)
-
 <h3 align="left">Languages and Tools:</h3>
 
 <p align="left">
