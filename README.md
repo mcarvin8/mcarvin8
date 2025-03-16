@@ -82,8 +82,9 @@ I have created these open-source projects so far:
 | [Apex Code Coverage Transformer](https://github.com/mcarvin8/apex-code-coverage-transformer) | Transform Salesforce Apex code coverage JSONs created during deployments and test runs into other formats accepted by SonarQube, GitHub, GitLab, Azure, Bitbucket, etc. |
 | [Apex Tests Git Delta](https://github.com/mcarvin8/apex-tests-git-delta) | Determine Apex tests for incremental Salesforce deployments using git commit messages. |
 | [SF Package Combiner](https://github.com/mcarvin8/sf-package-combiner) | Combine multiple Salesforce manifest files (package.xml) into 1 file for deployments. |
+| [SF Package List](https://github.com/mcarvin8/sf-package-list) | Convert Salesforce manifest files (package.xml) into list format. |
 | [XML 2 JSON Disassembler](https://github.com/mcarvin8/xml2json-disassembler) | Disassemble XML files into smaller, more manageable JSON files and reassemble the XML when needed. |
 | [XML 2 YAML Disassembler](https://github.com/mcarvin8/xml2yaml-disassembler) | Disassemble XML files into smaller, more manageable YAML files and reassemble the XML when needed. |
-
+| [XML 2 JSON5 Disassembler](https://github.com/mcarvin8/xml2json5-disassembler) | Disassemble XML files into smaller, more manageable JSON5 files and reassemble the XML when needed. |
 
 
