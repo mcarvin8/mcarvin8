@@ -12,7 +12,7 @@
 
 <h3 align="left">Tech Stack:</h3>
 
-- **Languages:** Python, TypeScript, Bash, PowerShell, C++
+- **Languages:** Python, TypeScript, Bash, PowerShell, C++, XML, YAML
 - **DevOps & Cloud:** AWS, Docker, Kubernetes, Terraform  
 - **CI/CD & Code Quality:** GitHub Actions, GitLab CI, SonarQube  
 - **Salesforce:** Apex, Metadata API, SFDX  
