@@ -24,9 +24,5 @@
 | [apex-code-coverage-transformer](https://github.com/mcarvin8/apex-code-coverage-transformer) | Transform Salesforce Apex code coverage JSONs created during deployments and test runs into other formats accepted by SonarQube, GitHub, GitLab, Azure, Bitbucket, etc. |
 | [sf-decomposer](https://github.com/mcarvin8/sf-decomposer) | Break down large Salesforce metadata files into smaller, more manageable files for version control and then recreate deployment-compatible files. |
 | [xml-disassembler](https://github.com/mcarvin8/xml-disassembler) | Disassemble XML files into smaller, more manageable files and reassemble them when needed. |
-| [apex-tests-git-delta](https://github.com/mcarvin8/apex-tests-git-delta) | Determine Apex tests for incremental Salesforce deployments using git commit messages. |
 | [sf-package-combiner](https://github.com/mcarvin8/sf-package-combiner) | Combine multiple Salesforce manifest files (package.xml) into 1 file for deployments. |
 | [sf-package-list](https://github.com/mcarvin8/sf-package-list) | Convert Salesforce manifest files (package.xml) into list format. |
-| [xml2json-disassembler](https://github.com/mcarvin8/xml2json-disassembler) | Disassemble XML files into smaller, more manageable JSON files and reassemble the XML when needed. |
-| [xml2yaml-disassembler](https://github.com/mcarvin8/xml2yaml-disassembler) | Disassemble XML files into smaller, more manageable YAML files and reassemble the XML when needed. |
-| [xml2json5-disassembler](https://github.com/mcarvin8/xml2json5-disassembler) | Disassemble XML files into smaller, more manageable JSON5 files and reassemble the XML when needed. |
