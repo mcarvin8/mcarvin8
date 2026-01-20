@@ -9,7 +9,7 @@
 
 ## 🔧 What I Do
 
-I have 7+ years of experience designing custom observability frameworks, optimizing CI/CD pipelines, and leading cross-functional engineering efforts. I'm passionate about creating reusable open-source tools that streamline engineering workflows and enhance platform reliability. On the side, I contribute to open-source projects in the Salesforce ecosystem.
+I have 7+ years of experience designing custom observability exporters, optimizing CI/CD pipelines, and leading cross-functional engineering efforts. I'm passionate about creating reusable open-source tools that streamline engineering workflows and enhance platform reliability. On the side, I contribute to open-source projects for Salesforce.
 
 **Current Focus:**
 - 🐳 Building Prometheus exporters with Python, Docker & Kubernetes
@@ -63,4 +63,4 @@ I have 7+ years of experience designing custom observability frameworks, optimiz
 
 ---
 
-💬 *Open to collaborating on DevOps tooling, observability solutions, and Salesforce ecosystem projects!*
+💬 *Open to collaborating on DevOps tooling, observability solutions, and Salesforce projects!*
