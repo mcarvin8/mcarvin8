@@ -46,6 +46,7 @@ I have 7+ years of experience designing custom observability frameworks, optimiz
 
 **AI**  
 ![Cursor](https://img.shields.io/badge/Cursor_AI-000000?style=flat&logo=cursor&logoColor=white)
+![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat&logo=n8n&logoColor=white)
 
 ---
 
