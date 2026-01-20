@@ -60,6 +60,7 @@ I have 7+ years of experience designing custom observability exporters, optimizi
 | **[Salesforce Monitoring (SFMon)](https://github.com/mcarvin8/sfmon)** | Cloud-agnostic Salesforce monitoring service using Docker, Salesforce CLI, Python, & Prometheus to monitor Salesforce orgs with Grafana dashboards and alerting |
 | **[StatusPage Prometheus Exporter](https://github.com/mcarvin8/statuspage-prometheus-exporter)** | Prometheus exporter that monitors Atlassian Statuspage.io services and exposes incident and maintenance metrics for Grafana dashboards |
 
+🤝 **Open Source Contributions:** [apex-test-list](https://github.com/wisefoxme/apex-test-list) by [@renatoliveira](https://github.com/renatoliveira) — A Salesforce CLI plugin that generates a list of specified Apex tests for CI/CD pipelines
 
 ---
 
