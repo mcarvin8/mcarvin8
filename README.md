@@ -25,6 +25,7 @@ I have 7+ years of experience designing custom observability exporters, optimizi
 
 **Languages**  
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat&logo=powershell&logoColor=white)
@@ -58,6 +59,7 @@ I have 7+ years of experience designing custom observability exporters, optimizi
 | **[Salesforce Decomposer](https://github.com/mcarvin8/sf-decomposer)** | CLI tool to split large Salesforce metadata XML files into modular components for better version control and safer deployments |
 | **[Apex Code Coverage Transformer](https://github.com/mcarvin8/apex-code-coverage-transformer)** | Converts Salesforce test coverage reports into SonarQube, JaCoCo, LCOV, Cobertura & Clover formats for CI integration |
 | **[XML Disassembler](https://github.com/mcarvin8/xml-disassembler)** | Lightweight CLI plugin to split/reassemble large XML files for improved Git diffs and code reviews |
+| **[XML Disassembler (Rust)](https://github.com/mcarvin8/xml-disassembler-rust)** | Rust implementation of xml-disassembler — disassemble large XML files into smaller, manageable files and reassemble when needed |
 | **[Salesforce Monitoring (SFMon)](https://github.com/mcarvin8/sfmon)** | Portable Prometheus exporter to monitor Salesforce orgs for overall org operations/performance, technical debt and auditing/complaince |
 | **[StatusPage Prometheus Exporter](https://github.com/mcarvin8/statuspage-prometheus-exporter)** | Prometheus exporter that monitors Atlassian Statuspage.io services and exposes incident and maintenance metrics for Grafana dashboards |
 
