@@ -67,6 +67,7 @@ I have 7+ years of experience designing custom observability exporters, optimizi
 
 - [apex-test-list](https://github.com/wisefoxme/apex-test-list) by [@renatoliveira](https://github.com/renatoliveira) — A Salesforce CLI plugin that generates a list of specified Apex tests for CI/CD pipelines
 - [sfdx-git-delta](https://github.com/scolladon/sfdx-git-delta) by [@scolladon](https://github.com/scolladon) — A Salesforce CLI plugin that generates incremental packages for CI/CD pipelines
+- [sf-git-merge-driver](https://github.com/scolladon/sf-git-merge-driver) by [@scolladon](https://github.com/scolladon) — A git merger driver designed for Salesforce metadata and manifests
 - [sfdx-hardis](https://github.com/hardisgroupcom/sfdx-hardis) by [@nvuillam](https://github.com/nvuillam) — Toolbox that builds and expands on the overall Salesforce DX experience in multiple ways
 
 Check out their other work on their profiles!
