@@ -57,7 +57,7 @@ I have 7+ years of experience designing custom observability exporters, optimizi
 | Project | Description |
 |---------|-------------|
 | **[Salesforce Decomposer](https://github.com/mcarvin8/sf-decomposer)** | CLI tool to split large Salesforce metadata XML files into smaller files for better version control and safer deployments |
-| **[Apex Code Coverage Transformer](https://github.com/mcarvin8/apex-code-coverage-transformer)** | Converts Salesforce test coverage reports into SonarQube, JaCoCo, LCOV, Cobertura & Clover formats for CI integration |
+| **[Apex Code Coverage Transformer](https://github.com/mcarvin8/apex-code-coverage-transformer)** | Converts Salesforce test coverage reports into SonarQube, JaCoCo, LCOV, Cobertura, Clover, and other formats for CI integration |
 | **XML Disassembler** | Split/reassemble large XML files for better Git diffs and version control. Core logic lives in the [Rust crate](https://github.com/mcarvin8/xml-disassembler-rust); The [Typescript repo](https://github.com/mcarvin8/xml-disassembler) is the Node.js wrapper which runs the Rust crate via [Neon](https://neon-bindings.com). |
 | **[Salesforce Monitoring (SFMon)](https://github.com/mcarvin8/sfmon)** | Portable Prometheus exporter to monitor Salesforce orgs for overall org operations/performance, technical debt and auditing/complaince |
 | **[StatusPage Prometheus Exporter](https://github.com/mcarvin8/statuspage-prometheus-exporter)** | Prometheus exporter that monitors Atlassian Statuspage.io services and exposes incident and maintenance metrics for Grafana dashboards |
