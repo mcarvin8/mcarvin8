@@ -8,7 +8,7 @@
 
 ---
 
-## 🔧 What I Do
+## What I Do
 
 I have 7+ years of experience designing custom observability exporters, optimizing CI/CD pipelines, and leading cross-functional engineering efforts. I'm passionate about creating reusable open-source tools that streamline engineering workflows and enhance platform reliability. On the side, I contribute to open-source projects for Salesforce.
 
@@ -21,7 +21,7 @@ I have 7+ years of experience designing custom observability exporters, optimizi
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Languages**  
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
@@ -52,7 +52,7 @@ I have 7+ years of experience designing custom observability exporters, optimizi
 
 ---
 
-## 📦 Featured Projects
+## Featured Projects
 
 | Project | Description |
 |---------|-------------|
@@ -62,7 +62,7 @@ I have 7+ years of experience designing custom observability exporters, optimizi
 | **[Salesforce Monitoring (SFMon)](https://github.com/mcarvin8/sfmon)** | Portable Prometheus exporter to monitor Salesforce orgs for overall org operations/performance, technical debt and auditing/complaince |
 | **[StatusPage Prometheus Exporter](https://github.com/mcarvin8/statuspage-prometheus-exporter)** | Prometheus exporter that monitors Atlassian Statuspage.io services and exposes incident and maintenance metrics for Grafana dashboards |
 
-🤝 **Open Source Contributions:** 
+**Open Source Contributions:** 
 
 - [apex-test-list](https://github.com/wisefoxme/apex-test-list) by [@renatoliveira](https://github.com/renatoliveira) — A Salesforce CLI plugin that generates a list of specified Apex tests for CI/CD pipelines
 - [sfdx-git-delta](https://github.com/scolladon/sfdx-git-delta) by [@scolladon](https://github.com/scolladon) — A Salesforce CLI plugin that generates incremental packages for CI/CD pipelines
@@ -73,7 +73,4 @@ Check out their other work on their profiles!
 
 ---
 
-💬 *Open to collaborating on DevOps tooling, observability solutions, and Salesforce projects!*
-
-
-
+*Open to collaborating on DevOps tooling, observability solutions, and Salesforce projects!*
