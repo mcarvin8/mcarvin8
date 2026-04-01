@@ -20,7 +20,7 @@ I have 7+ years of experience designing custom observability exporters, optimizi
 - 🚀 Engineering CI/CD pipelines for Salesforce releases (GitLab CI/CD, GitHub Actions)
 - 📊 Designing observability solutions with Grafana, Prometheus & AlertManager
 - 🤖 Automating workflows with AI-powered tooling
-- 🔌 Building TypeScript CLI plugins for Salesforce development & general DevOps
+- 🔌 Building TypeScript CLI plugins and Rust crates for Salesforce development & general DevOps
 
 ---
 
