@@ -64,7 +64,7 @@ I have 7+ years of experience designing custom observability exporters, optimizi
 | **XML Disassembler** | Split/reassemble large XML files for better Git diffs and version control. Core logic lives in the [Rust crate](https://github.com/mcarvin8/xml-disassembler-rust); The [Typescript repo](https://github.com/mcarvin8/xml-disassembler) is the Node.js wrapper which runs the Rust crate via [Neon](https://neon-bindings.com). |
 | **[Salesforce Monitoring (SFMon)](https://github.com/mcarvin8/sfmon)** | Prometheus exporter thay monitors Salesforce orgs for overall org operations/performance, technical debt and auditing/complaince |
 | **[StatusPage Prometheus Exporter](https://github.com/mcarvin8/statuspage-prometheus-exporter)** | Prometheus exporter that monitors Atlassian Statuspage.io services and exposes incident and maintenance metrics for Grafana dashboards |
-| **[Salesforce Git AI Meta Insights](https://github.com/mcarvin8/sf-git-ai-meta-insights)** | Salesforce CLI plugin which provides AI-generated metadata summaries using OpenAI by looking at the git diff. |
+| **[Salesforce Git AI Meta Insights](https://github.com/mcarvin8/sf-git-ai-meta-insights)** | Salesforce CLI plugin which provides AI-generated metadata change summaries using OpenAI by looking at the git diff. |
 
 **Open Source Contributions:** 
 
