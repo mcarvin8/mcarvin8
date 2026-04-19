@@ -58,11 +58,11 @@ OpenAI API • LLM pipelines • n8n • Cursor
 
 | Project | Description |
 |--------|-------------|
+| **Apex Code Coverage Transformer** | CLI tool that standardizes Salesforce coverage reporting across multiple CI/CD platforms to enforce code quality gates |
 | **Salesforce Decomposer** | CLI tool for breaking down monolithic Salesforce metadata into modular, version-controlled components enabling safer CI/CD workflows |
+| **XML Disassembler** | Structural decomposition engine for large XML systems with bidirectional reassembly and deterministic parsing |
 | **Salesforce Monitoring (SFMon)** | Observability platform exposing Salesforce org metrics via Prometheus for real-time monitoring and alerting across cloud environments |
 | **AI Git Intelligence Platform** | LLM-powered tooling that transforms Git diffs and other Git API responses into architecture-level change intelligence for CI/CD and release workflows |
-| **XML Disassembler** | Structural decomposition engine for large XML systems with bidirectional reassembly and deterministic parsing |
-| **Apex Code Coverage Transformer** | CI/CD quality gate system that standardizes Salesforce coverage reporting across multiple CI/CD platforms |
 
 **Open Source Contributions:** 
 
