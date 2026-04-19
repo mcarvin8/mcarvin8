@@ -1,6 +1,6 @@
 # Hey, I'm mcarvin8 (Matt Carvin)👋
 
-**Platform Engineer** building scalable, cloud-native monitoring and deployment solutions.
+**Platform Engineer** building internal developer platforms, observability systems, and CI/CD automation frameworks across cloud-native and enterprise environments.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matthew-carvin)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/mcarvin8)
@@ -11,60 +11,60 @@
 
 ---
 
+## Platform Scope
+
+I design and build systems that sit between application teams and infrastructure:
+
+- Developer productivity platforms (CLI tools, metadata systems, DevEx tooling)
+- Observability platforms (Prometheus exporters, metrics pipelines, alerting systems)
+- CI/CD automation frameworks (GitLab / GitHub Actions / Salesforce pipelines)
+- AI-assisted engineering workflows (LLM-powered code review and release intelligence)
+
+---
+
 ## What I Do
 
-I have 7+ years of experience designing custom observability exporters, optimizing CI/CD pipelines, and leading cross-functional engineering efforts. I'm passionate about creating reusable open-source tools that streamline engineering workflows and enhance platform reliability. On the side, I contribute to open-source projects for Salesforce.
+I have 7+ years of experience building platform systems that improve reliability, visibility, and developer velocity across distributed enterprise environments.
 
-**Current Focus:**
-- 🐳 Building Prometheus exporters with Python, Docker & Kubernetes
-- 🚀 Engineering CI/CD pipelines for Salesforce releases (GitLab CI/CD, GitHub Actions)
-- 📊 Designing observability solutions with Grafana, Prometheus & AlertManager
-- 🤖 Automating workflows with AI-powered tooling
-- 🔌 Building TypeScript CLI plugins and Rust crates for Salesforce development & general DevOps
+My focus areas:
+
+- 🐳 **Observability Platforms** — Prometheus exporters, metrics pipelines, Grafana-based monitoring systems
+- 🚀 **CI/CD Platforms** — GitLab/GitHub automation, Salesforce release engineering, deployment pipelines
+- 🧱 **Developer Platforms (DevEx)** — CLI plugins, metadata systems, version control optimization tools
+- 🤖 **AI Engineering Tools** — LLM-powered Git analysis, release summarization, and workflow automation
+- ⚙️ **Infrastructure Tooling** — Dockerized services, cloud-native deployment architectures, reusable services
 
 ---
 
 ## Tech Stack
 
-**Languages**  
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat&logo=powershell&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnubash&logoColor=white)
+### Languages
+TypeScript • Python • Rust • JavaScript • Bash • PowerShell
 
-**Cloud & Infrastructure**  
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonwebservices&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=flat&logo=terraform&logoColor=white)
+### Platform & Infrastructure
+AWS • Kubernetes • Docker • Terraform
 
-**Observability**  
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)
+### Observability
+Prometheus • Grafana • Alertmanager
 
-**CI/CD & DevOps**  
-![GitLab CI](https://img.shields.io/badge/GitLab_CI-FC6D26?style=flat&logo=gitlab&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white)
-![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?style=flat&logo=sonarqube&logoColor=white)
+### CI/CD
+GitLab CI • GitHub Actions • SonarQube
 
-**AI**  
-![Cursor](https://img.shields.io/badge/Cursor_AI-000000?style=flat&logo=cursor&logoColor=white)
-![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat&logo=n8n&logoColor=white)
+### AI / Automation
+OpenAI API • LLM pipelines • n8n • Cursor
 
 ---
 
-## Featured Projects
+## Featured Platform Systems
 
-| Project | Description |
-|---------|-------------|
-| **[Salesforce Decomposer](https://github.com/mcarvin8/sf-decomposer)** | CLI tool to split large Salesforce metadata XML files into smaller files for better version control and safer deployments |
-| **[Apex Code Coverage Transformer](https://github.com/mcarvin8/apex-code-coverage-transformer)** | Converts Salesforce test coverage reports into SonarQube, JaCoCo, LCOV, Cobertura, Clover, and other formats for CI integration |
-| **XML Disassembler** | Split/reassemble large XML files for better Git diffs and version control. Core logic lives in the [Rust crate](https://github.com/mcarvin8/xml-disassembler-rust); The [Typescript repo](https://github.com/mcarvin8/xml-disassembler) is the Node.js wrapper which runs the Rust crate via [Neon](https://neon-bindings.com). |
-| **[Salesforce Monitoring (SFMon)](https://github.com/mcarvin8/sfmon)** | Prometheus exporter thay monitors Salesforce orgs for overall org operations/performance, technical debt and auditing/complaince |
-| **[StatusPage Prometheus Exporter](https://github.com/mcarvin8/statuspage-prometheus-exporter)** | Prometheus exporter that monitors Atlassian Statuspage.io services and exposes incident and maintenance metrics for Grafana dashboards |
-| **[Smart Diff](https://github.com/mcarvin8/smart-diff)** | TypeScript library which turns git diffs from any git repo into an OpenAI summary, which has been extended into a specific [Salesforce metadata wrapper plugin](https://github.com/mcarvin8/sf-git-ai-meta-insights). |
+| System | Description |
+|--------|-------------|
+| **Salesforce Decomposer** | Internal developer platform for breaking down monolithic metadata into modular, version-controlled components enabling safer CI/CD workflows |
+| **SFMon** | Observability platform exposing Salesforce org metrics via Prometheus for real-time monitoring and alerting across cloud environments |
+| **AI Git Intelligence Platform** | LLM-powered system that transforms Git diffs into architecture-level change intelligence for CI/CD and release workflows |
+| **XML Disassembler** | Structural decomposition engine for large XML systems with bidirectional reassembly and deterministic parsing |
+| **Apex Code Coverage Transformer** | CI/CD quality gate system that standardizes Salesforce coverage reporting across multiple CI/CD platforms |
+| **StatusPage Prometheus Exporter** | External dependency monitoring system integrating SaaS health signals into Prometheus/Grafana observability stacks |
 
 **Open Source Contributions:** 
 
@@ -77,6 +77,22 @@ Check out their other work on their profiles!
 
 ---
 
-*Open to collaborating on DevOps tooling, observability solutions, and Salesforce projects!*
+## Focus Areas
 
+I’m currently focused on:
 
+- Building reusable platform components for engineering teams
+- Standardizing observability across distributed systems
+- Improving CI/CD reliability and developer experience
+- Applying LLMs to software engineering workflows
+
+---
+
+## Collaboration
+
+Open to working on:
+
+- Platform engineering systems
+- Observability and SRE tooling
+- Developer productivity platforms
+- AI-assisted engineering tools
