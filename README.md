@@ -66,4 +66,4 @@ Check out their other work on their profiles!
 
 ## Collaboration
 
-Open to working on platform engineering systems, observability and SRE tooling, developer productivity platforms, and AI-assisted engineering tools.
+Open to working on platform engineering systems, observability and developer tooling, and more.
