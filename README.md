@@ -54,16 +54,15 @@ OpenAI API • LLM pipelines • n8n • Cursor
 
 ---
 
-## Featured Projects/Platforms
+## Featured Projects
 
-| System | Description |
+| Project | Description |
 |--------|-------------|
 | **Salesforce Decomposer** | CLI tool for breaking down monolithic Salesforce metadata into modular, version-controlled components enabling safer CI/CD workflows |
 | **Salesforce Monitoring (SFMon)** | Observability platform exposing Salesforce org metrics via Prometheus for real-time monitoring and alerting across cloud environments |
-| **AI Git Intelligence Platform** | LLM-powered system that transforms Git diffs and other Git API responses into architecture-level change intelligence for CI/CD and release workflows |
+| **AI Git Intelligence Platform** | LLM-powered tooling that transforms Git diffs and other Git API responses into architecture-level change intelligence for CI/CD and release workflows |
 | **XML Disassembler** | Structural decomposition engine for large XML systems with bidirectional reassembly and deterministic parsing |
 | **Apex Code Coverage Transformer** | CI/CD quality gate system that standardizes Salesforce coverage reporting across multiple CI/CD platforms |
-| **StatusPage Prometheus Exporter** | External dependency monitoring system integrating SaaS health signals into Prometheus/Grafana observability stacks |
 
 **Open Source Contributions:** 
 
