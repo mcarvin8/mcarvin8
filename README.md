@@ -10,17 +10,6 @@
 
 ---
 
-## Platform Scope
-
-I design and build systems that sit between application teams and infrastructure:
-
-- Developer productivity platforms (CLI tools, metadata systems, DevEx tooling)
-- Observability platforms (Prometheus exporters, metrics pipelines, alerting systems)
-- CI/CD automation frameworks (GitLab / GitHub Actions / Salesforce pipelines)
-- AI-assisted engineering workflows (LLM-powered code review and release intelligence)
-
----
-
 ## What I Do
 
 I have 7+ years of experience building platform systems that improve reliability, visibility, and developer velocity across distributed enterprise environments.
@@ -75,22 +64,6 @@ Check out their other work on their profiles!
 
 ---
 
-## Focus Areas
-
-I’m currently focused on:
-
-- Building reusable platform components for engineering teams
-- Standardizing observability across distributed systems
-- Improving CI/CD reliability and developer experience
-- Applying LLMs to software engineering workflows
-
----
-
 ## Collaboration
 
-Open to working on:
-
-- Platform engineering systems
-- Observability and SRE tooling
-- Developer productivity platforms
-- AI-assisted engineering tools
+Open to working on platform engineering systems, observability and SRE tooling, developer productivity platforms, and AI-assisted engineering tools.
