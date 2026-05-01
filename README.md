@@ -49,7 +49,7 @@ OpenAI API • LLM pipelines • n8n • Cursor
 |--------|-------------|
 | [**Apex Code Coverage Transformer**](https://github.com/mcarvin8/apex-code-coverage-transformer) | CLI tool that standardizes Salesforce coverage reporting across multiple CI/CD platforms to enforce code quality gates |
 | [**Salesforce Decomposer**](https://github.com/mcarvin8/sf-decomposer) | CLI tool for breaking down monolithic Salesforce metadata into modular, version-controlled components enabling safer CI/CD workflows |
-| [**XML Disassembler**](https://github.com/mcarvin8/xml-disassembler-rust) | Structural decomposition engine for large XMLs with bidirectional reassembly and deterministic parsing. Built in Rust and exported to Node via Neon. |
+| [**Config File Disassembler**](https://github.com/mcarvin8/config-disassembler) | Structural decomposition engine for large config files like XML, YAML, JSON, etc. with bidirectional reassembly and deterministic parsing. Built in Rust and exported to Node via Neon. Used by [**Salesforce Decomposer**](https://github.com/mcarvin8/sf-decomposer). |
 | [**Salesforce Monitoring (SFMon)**](github.com/mcarvin8/sfmon) | Observability platform exposing Salesforce org metrics via Prometheus for real-time monitoring and alerting across cloud environments |
 | **AI Git Intelligence Platform** | LLM-powered tooling that transforms Git diffs and other Git API responses into architecture-level change intelligence for CI/CD and release workflows. Tools include [smart-diff](https://github.com/mcarvin8/smart-diff), [Salesforce Git AI Metadata Insights](https://github.com/mcarvin8/sf-git-ai-meta-insights), and [GitLab LLM Kit](https://github.com/mcarvin8/gitlab-llm-kit).  |
 
