@@ -25,6 +25,15 @@ Most of my open source work is Salesforce CLI plugins and Node.js/TypeScript too
 
 </details>
 
+## 🤝 Open-source contributions
+
+I’ve contributed to or used the following Salesforce tooling in the wider DevOps ecosystem:
+
+- [**sfdx-git-delta**](https://github.com/scolladon/sfdx-git-delta) by [@scolladon](https://github.com/scolladon) — generates Salesforce deployment content from Git changes.
+- [**sf-git-merge-driver**](https://github.com/scolladon/sf-git-merge-driver) by [@scolladon](https://github.com/scolladon) — assists with Git merge handling for Salesforce metadata.
+- [**sfdx-hardis**](https://github.com/hardisgroupcom/sfdx-hardis) by [@hardisgroupcom](https://github.com/hardisgroupcom) — Salesforce DevOps and CI/CD automation tools.
+- [**apex-test-list**](https://github.com/wisefoxme/apex-test-list) by [@wisefoxme](https://github.com/wisefoxme) — identifies Apex tests to run based on metadata changes.
+
 ## 🧰 Tech I work with
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
