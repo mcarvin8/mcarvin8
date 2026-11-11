@@ -2,7 +2,7 @@
 
 DevOps engineer at **Scientific Research Corporation (SRC)**, focused on **Salesforce DevOps**: CI/CD pipelines, metadata tooling, and monitoring that make deployments smaller, faster, and easier to review. Previously at **Avalara** and **Naval Surface Warfare Center, Philadelphia Division (NSWCPD)**.
 
-Most of my open source work is Salesforce CLI plugins and Node.js/TypeScript tools, with a growing slice of Rust, AI-assisted git tooling, and Prometheus monitoring.
+Most of my open source work is Salesforce CLI plugins and Node.js/TypeScript tools, with a growing subset of Rust, AI-assisted git tooling, and Prometheus monitoring.
 
 ## 🔧 Featured projects
 
@@ -16,11 +16,11 @@ Most of my open source work is Salesforce CLI plugins and Node.js/TypeScript too
 <details>
 <summary><b>More tools</b></summary>
 
-- [**apex-tests-git-delta**](https://github.com/mcarvin8/apex-tests-git-delta): Pick the Apex test classes to run in incremental deployments by parsing git commit messages.
 - [**sfmon**](https://github.com/mcarvin8/sfmon): monitor a Salesforce org and expose Prometheus metrics.
 - [**statuspage-prometheus-exporter**](https://github.com/mcarvin8/statuspage-prometheus-exporter): export Atlassian Statuspage incidents as Prometheus metrics.
 - [**sf-package-combiner**](https://github.com/mcarvin8/sf-package-combiner): Merge multiple Salesforce `package.xml` manifests into one for Salesforce CLI deployments.
 - [**sf-package-list**](https://github.com/mcarvin8/sf-package-list): convert `package.xml` manifests to and from plain-text lists.
+- [**apex-tests-git-delta**](https://github.com/mcarvin8/apex-tests-git-delta): Pick the Apex test classes to run in incremental deployments by parsing git commit messages.
 - [**sf-gitlab-cicd-template**](https://github.com/mcarvin8/sf-gitlab-cicd-template): GitLab CI/CD template for Salesforce: incremental metadata deployments, sandbox management, and static analysis.
 
 </details>
