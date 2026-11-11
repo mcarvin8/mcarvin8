@@ -1,6 +1,6 @@
 # Hi, I'm Matt Carvin (mcarvin8) 👋
 
-DevOps engineer at **Scientific Research Corporation (SRC)**, focused on **Salesforce DevOps**: CI/CD pipelines, metadata tooling, and the infrastructure tooling that makes deployments smaller, faster, and easier to review. Previously at **Avalara** and **Naval Surface Warfare Center, Philadelphia Division (NSWCPD)**.
+DevOps engineer at **Scientific Research Corporation (SRC)**, focused on **Salesforce DevOps**: CI/CD pipelines, metadata tooling, and monitoring that make deployments smaller, faster, and easier to review. Previously at **Avalara** and **Naval Surface Warfare Center, Philadelphia Division (NSWCPD)**.
 
 Most of my open source work is Salesforce CLI plugins and Node.js/TypeScript tools, with a growing slice of Rust, AI-assisted git tooling, and Prometheus monitoring.
 
