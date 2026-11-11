@@ -27,7 +27,7 @@ Most of my open source work is Salesforce CLI plugins and Node.js/TypeScript too
 
 ## 🤝 Open-source contributions
 
-I’ve contributed to these Salesforce tooling apart of the open-source Salesforce community::
+I’ve contributed to these Salesforce projects apart of the open-source Salesforce community:
 
 - [**sfdx-git-delta**](https://github.com/scolladon/sfdx-git-delta) by [@scolladon](https://github.com/scolladon) — generates Salesforce incremental deployment content from Git changes.
 - [**sf-git-merge-driver**](https://github.com/scolladon/sf-git-merge-driver) by [@scolladon](https://github.com/scolladon) — assists with Git merge handling for Salesforce metadata.
