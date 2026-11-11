@@ -29,10 +29,10 @@ Most of my open source work is Salesforce CLI plugins and Node.js/TypeScript too
 
 I’ve contributed to these Salesforce tooling apart of the open-source Salesforce community::
 
-- [**sfdx-git-delta**](https://github.com/scolladon/sfdx-git-delta) by [@scolladon](https://github.com/scolladon) — generates Salesforce deployment content from Git changes.
+- [**sfdx-git-delta**](https://github.com/scolladon/sfdx-git-delta) by [@scolladon](https://github.com/scolladon) — generates Salesforce incremental deployment content from Git changes.
 - [**sf-git-merge-driver**](https://github.com/scolladon/sf-git-merge-driver) by [@scolladon](https://github.com/scolladon) — assists with Git merge handling for Salesforce metadata.
-- [**sfdx-hardis**](https://github.com/hardisgroupcom/sfdx-hardis) by [@hardisgroupcom](https://github.com/hardisgroupcom) — Salesforce DevOps and CI/CD automation tools.
-- [**apex-test-list**](https://github.com/wisefoxme/apex-test-list) by [@wisefoxme](https://github.com/wisefoxme) — identifies Apex tests to run based on metadata changes.
+- [**sfdx-hardis**](https://github.com/hardisgroupcom/sfdx-hardis) by [@hardisgroupcom](https://github.com/hardisgroupcom) — Salesforce DevOps and Monitoring platform.
+- [**apex-test-list**](https://github.com/wisefoxme/apex-test-list) by [@wisefoxme](https://github.com/wisefoxme) — identifies Apex tests to run based on test annotations.
 
 ## 🧰 Tech I work with
 
