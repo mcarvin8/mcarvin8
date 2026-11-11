@@ -40,3 +40,5 @@ Most of my open source work is Salesforce CLI plugins and Node.js/TypeScript too
 ## 📫 Get in touch
 
 Found a bug or have an idea for one of my tools? Open an issue on the repo. Contributions are welcome.
+
+Want to collaborate on something new or just ask something in general? Open an issue [here](https://github.com/mcarvin8/mcarvin8/issues).
