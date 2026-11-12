@@ -14,7 +14,7 @@ Most of my open source work is Salesforce CLI plugins and Node.js/TypeScript too
 | [**config-disassembler**](https://github.com/mcarvin8/config-disassembler) | Rust crate that splits config files into smaller, version-control-friendly pieces and reassembles them on demand. Node bindings via [napi-rs](https://github.com/mcarvin8/config-disassembler-node). [![Crates.io](https://img.shields.io/crates/v/config-disassembler.svg)](https://crates.io/crates/config-disassembler) |
 
 <details>
-<summary><b>More tools</b></summary>
+<summary><b>More projects</b></summary>
 
 - [**sfmon**](https://github.com/mcarvin8/sfmon): monitor a Salesforce org and expose Prometheus metrics.
 - [**statuspage-prometheus-exporter**](https://github.com/mcarvin8/statuspage-prometheus-exporter): export Atlassian Statuspage incidents as Prometheus metrics.
@@ -48,6 +48,6 @@ I’ve contributed to these Salesforce projects apart of the open-source Salesfo
 
 ## 📫 Get in touch
 
-Found a bug or have an idea for one of my tools? Open an issue on the repo. Contributions are welcome.
+Found a bug or have an idea for one of my projects? Open an issue on the repo. Contributions are welcome.
 
 Want to collaborate on something new or just ask something in general? Open an issue [here](https://github.com/mcarvin8/mcarvin8/issues).
