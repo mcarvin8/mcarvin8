@@ -12,6 +12,7 @@ Most of my open source work is Salesforce CLI plugins and Node.js/TypeScript too
 | [**apex-code-coverage-transformer**](https://github.com/mcarvin8/apex-code-coverage-transformer) | Transform Salesforce Apex code coverage JSON into formats for SonarQube, SonarCloud, GitHub, GitLab, Azure DevOps, and Bitbucket. [![npm](https://img.shields.io/npm/v/apex-code-coverage-transformer?label=&color=blue)](https://www.npmjs.com/package/apex-code-coverage-transformer) |
 | [**smart-diff**](https://github.com/mcarvin8/smart-diff) | AI-powered natural-language summaries of git diffs for PR descriptions, code review, and release notes. Bring your own LLM provider; ships as a CLI and a Claude Code plugin. [![npm](https://img.shields.io/npm/v/@mcarvin/smart-diff?label=&color=blue)](https://www.npmjs.com/package/@mcarvin/smart-diff) |
 | [**config-disassembler**](https://github.com/mcarvin8/config-disassembler) | Rust crate that splits config files into smaller, version-control-friendly pieces and reassembles them on demand. Node bindings via [napi-rs](https://github.com/mcarvin8/config-disassembler-node). [![Crates.io](https://img.shields.io/crates/v/config-disassembler.svg)](https://crates.io/crates/config-disassembler) |
+| [**sf-flow-coverage**](https://github.com/mcarvin8/sf-flow-coverage) | Gets your Salesforce orgs ready to deploy Flows as active. [![NPM](https://img.shields.io/npm/v/sf-flow-coverage.svg?label=sf-flow-coverage)](https://www.npmjs.com/package/sf-flow-coverage) |
 
 <details>
 <summary><b>More projects</b></summary>
