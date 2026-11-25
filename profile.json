@@ -1,0 +1,96 @@
+{
+  "_about": "Hand-kept facts for the profile. Numbers that change on their own (contributions, stars, downloads, versions) are fetched by src/fetch.ts and never typed here.",
+  "user": "mcarvin8",
+  "name": "Matt Carvin",
+  "hero": {
+    "kicker": "~/mcarvin8 $ whoami",
+    "title": "Hi, I'm Matt Carvin.",
+    "tagline": "Salesforce DevOps engineer. I build CLI plugins and tools that make deployments smaller, faster and easier to review.",
+    "chips": [
+      ["DevOps @ SRC", "sf"],
+      ["prev. Avalara", "muted"],
+      ["prev. NSWCPD", "muted"]
+    ],
+    "terminal": [
+      ["cmd", "sf plugins install sf-decomposer"],
+      ["cmd", "sf decomposer decompose -m flow"],
+      ["ok", "✓ flows decomposed"],
+      ["cmd", "git push"]
+    ]
+  },
+  "links": [
+    { "id": "gh", "label": "GitHub", "handle": "@mcarvin8", "url": "https://github.com/mcarvin8", "tone": "fg" },
+    { "id": "npm", "label": "npm", "handle": "~mcarvin", "url": "https://www.npmjs.com/~mcarvin", "tone": "npm" },
+    { "id": "crates", "label": "crates.io", "handle": "mcarvin8", "url": "https://crates.io/users/mcarvin8", "tone": "rust" },
+    { "id": "hi", "label": "Say hi", "handle": "open an issue", "url": "https://github.com/mcarvin8/mcarvin8/issues", "tone": "sf" }
+  ],
+  "npm": {
+    "maintainer": "mcarvin",
+    "_exclude": "Platform binaries and -core packages are installed by the main packages, so counting them would count the same install twice.",
+    "exclude": ["-(darwin|linux|win32)-", "-core$"]
+  },
+  "crates": { "userId": 386868 },
+  "featured": [
+    {
+      "id": "sf-decomposer",
+      "repo": "sf-decomposer",
+      "npm": ["sf-decomposer"],
+      "line": "Splits big Salesforce metadata files (permission sets, profiles, labels, flows) into small, diff-friendly files, and rebuilds them to deploy.",
+      "chips": [["Salesforce CLI", "sf"], ["TypeScript", "ts"]]
+    },
+    {
+      "id": "apex-code-coverage-transformer",
+      "repo": "apex-code-coverage-transformer",
+      "npm": ["apex-code-coverage-transformer"],
+      "line": "Turns Salesforce Apex code coverage JSON into reports for SonarQube, GitHub, GitLab, Azure DevOps and Bitbucket.",
+      "chips": [["Salesforce CLI", "sf"], ["TypeScript", "ts"]]
+    },
+    {
+      "id": "smart-diff",
+      "repo": "smart-diff",
+      "npm": ["@mcarvin/smart-diff"],
+      "line": "AI-written, plain-English summaries of git diffs for PR descriptions, code review and release notes.",
+      "chips": [["AI", "ai"], ["TypeScript", "ts"]]
+    },
+    {
+      "id": "config-disassembler",
+      "repo": "config-disassembler",
+      "crates": ["config-disassembler"],
+      "npm": ["config-disassembler"],
+      "line": "Rust crate that splits config files into small, VCS-friendly pieces and puts them back together. Node bindings via napi-rs.",
+      "chips": [["Rust", "rust"], ["napi-rs", "node"]]
+    },
+    {
+      "id": "sf-flow-coverage",
+      "repo": "sf-flow-coverage",
+      "npm": ["sf-flow-coverage"],
+      "line": "Gets Salesforce orgs ready to deploy Flows as active.",
+      "chips": [["Salesforce CLI", "sf"], ["Flows", "sf"], ["TypeScript", "ts"]]
+    }
+  ],
+  "toolbox": [
+    ["TypeScript", "ts"],
+    ["Node.js", "node"],
+    ["Rust", "rust"],
+    ["Python", "py"],
+    ["Bash", "bash"],
+    ["Salesforce", "sf"],
+    ["GitLab CI", "gitlab"],
+    ["GitHub Actions", "gha"],
+    ["Prometheus", "prom"]
+  ],
+  "more": [
+    ["sfmon", "monitor a Salesforce org and expose Prometheus metrics."],
+    ["statuspage-prometheus-exporter", "export Atlassian Statuspage incidents as Prometheus metrics."],
+    ["sf-package-combiner", "merge multiple Salesforce `package.xml` manifests into one for Salesforce CLI deployments."],
+    ["sf-package-list", "convert `package.xml` manifests to and from plain-text lists."],
+    ["apex-tests-git-delta", "pick the Apex test classes to run in incremental deployments by parsing git commit messages."],
+    ["sf-gitlab-cicd-template", "GitLab CI/CD template for Salesforce: incremental metadata deployments, sandbox management, and static analysis."]
+  ],
+  "contributions": [
+    ["scolladon/sfdx-git-delta", "generates Salesforce incremental deployment content from Git changes."],
+    ["scolladon/sf-git-merge-driver", "assists with Git merge handling for Salesforce metadata."],
+    ["hardisgroupcom/sfdx-hardis", "Salesforce DevOps and Monitoring platform."],
+    ["wisefoxme/apex-test-list", "identifies Apex tests to run based on test annotations."]
+  ]
+}

@@ -1,0 +1,54 @@
+name: nightly profile refresh
+
+# Redraws every card from public data and commits assets/, README.md and data/state.json when they change.
+# No secrets needed: the built-in GITHUB_TOKEN reads the public GraphQL data and pushes the commit.
+on:
+  schedule:
+    - cron: "23 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "profile.json"
+      - "package-lock.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nightly-profile
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      # The build exits non-zero when a source has been failing for more than 3 days. It still writes the cards
+      # (drawn from the saved copy), so let it fail softly, commit what is fresh, then turn the run red.
+      - id: build
+        run: npm run build
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit the refreshed cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets README.md data/state.json
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+          else
+            git commit -m "chore: nightly profile refresh"
+            git push
+          fi
+      - name: Fail the run when the build failed
+        if: steps.build.outcome == 'failure'
+        run: exit 1
