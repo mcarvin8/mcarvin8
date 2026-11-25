@@ -7,9 +7,9 @@
 <a href="https://github.com/mcarvin8/mcarvin8/issues"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-hi-dark.svg"><img src="assets/badge-hi-light.svg" height="44" alt="Say hi open an issue"></picture></a>
 </p>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg"><img src="assets/stats-light.svg" width="100%" alt="306k npm downloads · last 12 months, 3.2k crates.io downloads · all time, 14 npm packages &amp; crates published, 3,329 contributions · last 12 months, 4 days current streak · best 19, 81 stars across 38 public repos"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg"><img src="assets/stats-light.svg" width="100%" alt="306k npm downloads · last 12 months, 3.2k crates.io downloads · all time, 14 npm packages &amp; crates published, 3,330 contributions · last 12 months, 4 days current streak · best 19, 81 stars across 38 public repos"></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg"><img src="assets/heatmap-light.svg" width="100%" alt="3,329 contributions in the last year"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg"><img src="assets/heatmap-light.svg" width="100%" alt="3,330 contributions in the last year"></picture>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/label-projects-dark.svg"><img src="assets/label-projects-light.svg" width="100%" alt="Featured projects"></picture>
 
