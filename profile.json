@@ -35,7 +35,7 @@
       "id": "sf-decomposer",
       "repo": "sf-decomposer",
       "npm": ["sf-decomposer"],
-      "line": "Splits big Salesforce metadata files (permission sets, profiles, labels, flows) into small, diff-friendly files, and rebuilds them to deploy.",
+      "line": "Splits big Salesforce metadata files into small, diff-friendly files and rebuilds them to deploy. Powered by the config-disassembler Rust crate.",
       "chips": [["Salesforce CLI", "sf"], ["TypeScript", "ts"]]
     },
     {
@@ -51,14 +51,6 @@
       "npm": ["@mcarvin/smart-diff"],
       "line": "AI-written, plain-English summaries of git diffs for PR descriptions, code review and release notes.",
       "chips": [["AI", "ai"], ["TypeScript", "ts"]]
-    },
-    {
-      "id": "config-disassembler",
-      "repo": "config-disassembler",
-      "crates": ["config-disassembler"],
-      "npm": ["config-disassembler"],
-      "line": "Rust crate that splits config files into small, VCS-friendly pieces and puts them back together. Node bindings via napi-rs.",
-      "chips": [["Rust", "rust"], ["napi-rs", "node"]]
     },
     {
       "id": "sf-flow-coverage",
@@ -80,6 +72,7 @@
     ["Prometheus", "prom"]
   ],
   "more": [
+    ["config-disassembler", "Rust crate (with Node bindings via napi-rs) that splits config files into small, VCS-friendly pieces and reassembles them. The engine behind sf-decomposer."],
     ["sfmon", "monitor a Salesforce org and expose Prometheus metrics."],
     ["statuspage-prometheus-exporter", "export Atlassian Statuspage incidents as Prometheus metrics."],
     ["sf-package-combiner", "merge multiple Salesforce `package.xml` manifests into one for Salesforce CLI deployments."],

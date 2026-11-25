@@ -14,16 +14,16 @@
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/label-projects-dark.svg"><img src="assets/label-projects-light.svg" width="100%" alt="Featured projects"></picture>
 
 <p align="center">
-<a href="https://github.com/mcarvin8/sf-decomposer"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-sf-decomposer-dark.svg"><img src="assets/project-sf-decomposer-light.svg" width="49%" alt="sf-decomposer: Splits big Salesforce metadata files (permission sets, profiles, labels, flows) into small, diff-friendly files, and rebuilds them to deploy. v7.17.0, 6,333 downloads in the last 30 days, 25 stars."></picture></a>
+<a href="https://github.com/mcarvin8/sf-decomposer"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-sf-decomposer-dark.svg"><img src="assets/project-sf-decomposer-light.svg" width="49%" alt="sf-decomposer: Splits big Salesforce metadata files into small, diff-friendly files and rebuilds them to deploy. Powered by the config-disassembler Rust crate. v7.17.0, 6,333 downloads in the last 30 days, 25 stars."></picture></a>
 <a href="https://github.com/mcarvin8/apex-code-coverage-transformer"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-apex-code-coverage-transformer-dark.svg"><img src="assets/project-apex-code-coverage-transformer-light.svg" width="49%" alt="apex-code-coverage-transformer: Turns Salesforce Apex code coverage JSON into reports for SonarQube, GitHub, GitLab, Azure DevOps and Bitbucket. v5.0.1, 20,944 downloads in the last 30 days, 23 stars."></picture></a>
 <a href="https://github.com/mcarvin8/smart-diff"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-smart-diff-dark.svg"><img src="assets/project-smart-diff-light.svg" width="49%" alt="smart-diff: AI-written, plain-English summaries of git diffs for PR descriptions, code review and release notes. v6.9.0, 2,339 downloads in the last 30 days, 0 stars."></picture></a>
-<a href="https://github.com/mcarvin8/config-disassembler"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-config-disassembler-dark.svg"><img src="assets/project-config-disassembler-light.svg" width="49%" alt="config-disassembler: Rust crate that splits config files into small, VCS-friendly pieces and puts them back together. Node bindings via napi-rs. v0.12.3, 7,477 downloads in the last 30 days, 0 stars."></picture></a>
 <a href="https://github.com/mcarvin8/sf-flow-coverage"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-sf-flow-coverage-dark.svg"><img src="assets/project-sf-flow-coverage-light.svg" width="49%" alt="sf-flow-coverage: Gets Salesforce orgs ready to deploy Flows as active. v0.9.3, 2,587 downloads in the last 30 days, 1 stars."></picture></a>
 </p>
 
 <details>
 <summary><b>More projects</b></summary>
 
+- [**config-disassembler**](https://github.com/mcarvin8/config-disassembler): Rust crate (with Node bindings via napi-rs) that splits config files into small, VCS-friendly pieces and reassembles them. The engine behind sf-decomposer.
 - [**sfmon**](https://github.com/mcarvin8/sfmon): monitor a Salesforce org and expose Prometheus metrics.
 - [**statuspage-prometheus-exporter**](https://github.com/mcarvin8/statuspage-prometheus-exporter): export Atlassian Statuspage incidents as Prometheus metrics.
 - [**sf-package-combiner**](https://github.com/mcarvin8/sf-package-combiner): merge multiple Salesforce `package.xml` manifests into one for Salesforce CLI deployments.
