@@ -17,14 +17,14 @@ export function readme(p: Profile, d: Data): string {
   const out: string[] = [];
 
   out.push(link(gh, pic('hero', `${p.hero.title} ${p.hero.tagline}`)));
-  out.push(
-    `<p align="center">\n${p.links
-      .map((l) => {
-        const attrs = l.title ? `height="44" title="${esc(l.title)}"` : 'height="44"';
-        return link(l.url, pic(`badge-${l.id}`, l.title ?? `${l.label} ${l.handle}`, attrs), l.title);
-      })
-      .join('\n')}\n</p>`,
-  );
+  const badges = p.links.map((l) => {
+    const attrs = l.title ? `height="44" title="${esc(l.title)}"` : 'height="44"';
+    return link(l.url, pic(`badge-${l.id}`, l.title ?? `${l.label} ${l.handle}`, attrs), l.title);
+  });
+  // More than four badges don't fit on one line, so split them into even rows of three.
+  const perRow = badges.length > 4 ? 3 : badges.length;
+  const rows = Array.from({ length: Math.ceil(badges.length / perRow) }, (_, i) => badges.slice(i * perRow, (i + 1) * perRow).join('\n'));
+  out.push(`<p align="center">\n${rows.join('\n<br>\n')}\n</p>`);
   out.push(pic('label-projects', 'Featured projects'));
   out.push(
     `<p align="center">\n${p.featured

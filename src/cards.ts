@@ -133,7 +133,7 @@ export function hero(name: ThemeName, p: Profile): string {
 
 // ---------- link badges ----------
 
-const BADGE_ICON: Record<string, string> = { gh: 'gh', npm: 'npm', crates: 'rs', hi: 'hi' };
+const BADGE_ICON: Record<string, string> = { gh: 'gh', npm: 'npm', crates: 'rs', pypi: 'py', docker: 'dh', hi: 'hi' };
 
 export function badge(name: ThemeName, l: Profile['links'][number]): string {
   const t = theme(name);

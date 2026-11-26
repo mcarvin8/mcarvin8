@@ -22,6 +22,8 @@
     { "id": "gh", "label": "GitHub", "handle": "@mcarvin8", "url": "https://github.com/mcarvin8", "tone": "fg" },
     { "id": "npm", "label": "npm", "handle": "~mcarvin", "url": "https://www.npmjs.com/~mcarvin", "tone": "npm" },
     { "id": "crates", "label": "crates.io", "handle": "mcarvin8", "url": "https://crates.io/users/mcarvin8", "tone": "rust" },
+    { "id": "pypi", "label": "PyPI", "handle": "mcarvin8", "url": "https://pypi.org/user/mcarvin8/", "tone": "pypi" },
+    { "id": "docker", "label": "Docker Hub", "handle": "mcarvin8", "url": "https://hub.docker.com/u/mcarvin8", "tone": "docker" },
     {
       "id": "hi",
       "label": "Say hi",

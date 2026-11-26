@@ -44,6 +44,8 @@ const LIGHT: Theme = {
     prom: '#c2401a',
     ai: '#7c3aed',
     npm: '#c12127',
+    pypi: '#2f6aa3',
+    docker: '#1d63ed',
   },
 };
 
@@ -72,6 +74,8 @@ const DARK: Theme = {
     prom: '#f07a52',
     ai: '#b392f0',
     npm: '#f26b6f',
+    pypi: '#ffd43b',
+    docker: '#5b9bff',
   },
 };
 
