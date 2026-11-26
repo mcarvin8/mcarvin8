@@ -11,6 +11,8 @@ export type Crate = { name: string; version: string; downloads: number; month: n
 /** One upstream repo I contribute to. `avatar` is the owner's avatar as a data URI, since README images can't load remote files. */
 export type Oss = {
   repo: string;
+  /** The repo's own GitHub description. */
+  description: string;
   avatar: string;
   stars: number;
   prs: number;
@@ -150,11 +152,11 @@ export async function fetchOss(p: Profile): Promise<Oss[]> {
     const [owner, name] = c.repo.split('/');
     const q = `repo:${c.repo} author:${p.user} is:pr is:merged`;
     return (
-      `r${i}: repository(owner: ${JSON.stringify(owner)}, name: ${JSON.stringify(name)}) { stargazerCount owner { avatarUrl(size: 72) } }\n` +
+      `r${i}: repository(owner: ${JSON.stringify(owner)}, name: ${JSON.stringify(name)}) { description stargazerCount owner { avatarUrl(size: 72) } }\n` +
       `s${i}: search(query: ${JSON.stringify(q)}, type: ISSUE, first: 1) { issueCount }`
     );
   });
-  type Repo = { stargazerCount: number; owner: { avatarUrl: string } };
+  type Repo = { description: string | null; stargazerCount: number; owner: { avatarUrl: string } };
   const res = await gql<Record<string, Repo & { issueCount: number }>>(`{ ${parts.join('\n')} }`);
 
   const out: Oss[] = [];
@@ -175,7 +177,7 @@ export async function fetchOss(p: Profile): Promise<Oss[]> {
       const month = r.downloads.slice(-30).reduce((a, d) => a + d.downloads, 0);
       npm = { name: c.npm, version: latest.version, month, weekly: weekly(byDay) };
     }
-    out.push({ repo: c.repo, avatar, stars: repo.stargazerCount, prs: res[`s${i}`].issueCount, npm });
+    out.push({ repo: c.repo, description: repo.description?.trim() ?? '', avatar, stars: repo.stargazerCount, prs: res[`s${i}`].issueCount, npm });
   }
   return out;
 }

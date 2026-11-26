@@ -244,7 +244,7 @@ export const prLabel = (n: number) => `${n} ${n === 1 ? 'PR' : 'PRs'} merged`;
 
 export function ossCard(name: ThemeName, c: Contribution, o: Oss): string {
   const t = theme(name);
-  const H = 172;
+  const H = 192;
   const pad = 22;
   const [owner, repo] = c.repo.split('/');
   let body =
@@ -263,21 +263,21 @@ export function ossCard(name: ThemeName, c: Contribution, o: Oss): string {
     text(nx, 31, `${owner} /`, { size: 12, fill: t.muted, mono: true }) +
     text(nx, 50, repo, { size: Math.round(nameSize * 10) / 10, fill: t.fg, weight: 700 });
 
-  wrap(c.line, PW - pad * 2, 13.5, 2).forEach((l, i) => {
+  wrap(o.description, PW - pad * 2, 13.5, 3).forEach((l, i) => {
     body += text(pad, 84 + i * 20, l, { size: 13.5, fill: t.muted });
   });
 
-  body += `<line x1="${pad}" x2="${PW - pad}" y1="126.5" y2="126.5" stroke="${t.border}" stroke-opacity="0.7"/>`;
+  body += `<line x1="${pad}" x2="${PW - pad}" y1="146.5" y2="146.5" stroke="${t.border}" stroke-opacity="0.7"/>`;
   const facts = [`★ ${compact(o.stars)}`, o.npm && `v${o.npm.version}`, o.npm && `${compact(o.npm.month)}/mo`].filter(Boolean).join('  ·  ');
-  body += text(pad, 154, facts, { size: 12.5, fill: t.muted, mono: true });
-  if (o.npm?.weekly.some((v) => v > 0)) body += sparkline(o.npm.weekly, PW - pad - 104, 136, 104, 24, t.tones.node);
+  body += text(pad, 174, facts, { size: 12.5, fill: t.muted, mono: true });
+  if (o.npm?.weekly.some((v) => v > 0)) body += sparkline(o.npm.weekly, PW - pad - 104, 156, 104, 24, t.tones.node);
 
   return doc(PW, H, ossAlt(c, o), body);
 }
 
 export function ossAlt(c: Contribution, o: Oss): string {
   const facts = [prLabel(o.prs) + ' by me', `${commas(o.stars)} stars`, o.npm && `v${o.npm.version}`, o.npm && `${commas(o.npm.month)} npm downloads in the last 30 days`];
-  return `${c.repo}: ${c.line} ${facts.filter(Boolean).join(', ')}.`;
+  return `${c.repo}: ${o.description} ${facts.filter(Boolean).join(', ')}.`;
 }
 
 // ---------- toolbox ----------

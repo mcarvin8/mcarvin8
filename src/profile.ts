@@ -4,8 +4,8 @@ export type Tag = [label: string, tone: string];
 
 export type Featured = { id: string; repo: string; npm?: string[]; crates?: string[]; line: string; chips: Tag[] };
 
-/** An upstream project I contribute to. `repo` is owner/name; `npm` is its package, when it has one. */
-export type Contribution = { repo: string; npm?: string; line: string };
+/** An upstream project I contribute to. `repo` is owner/name; `npm` is its package, when it has one. Its description comes from GitHub. */
+export type Contribution = { repo: string; npm?: string };
 
 export type Profile = {
   user: string;
