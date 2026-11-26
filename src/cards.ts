@@ -229,12 +229,12 @@ export function project(name: ThemeName, f: Featured, ps: ProjectStats): string 
   body += chipRow(t, pad, 132, PW - pad, f.chips, 11).svg;
   body += `<line x1="${pad}" x2="${PW - pad}" y1="168.5" y2="168.5" stroke="${t.border}" stroke-opacity="0.7"/>`;
 
-  const facts = [ps.version ? `v${ps.version}` : '', ps.month ? `${compact(ps.month)}/mo` : '', `★ ${ps.stars}`].filter(Boolean).join('  ·  ');
+  const facts = [ps.version ? `v${ps.version}` : '', ps.month ? `${compact(ps.month)}/mo` : '', ps.stars ? `★ ${ps.stars}` : ''].filter(Boolean).join('  ·  ');
   body += text(pad, 196, facts, { size: 12.5, fill: t.muted, mono: true });
   if (ps.weekly.some((v) => v > 0)) {
     body += sparkline(ps.weekly, PW - pad - 104, 178, 104, 24, t.accent);
   }
-  const alt = `${f.id}: ${f.line} ${[ps.version && `v${ps.version}`, ps.month && `${commas(ps.month)} downloads in the last 30 days`, `${ps.stars} stars`].filter(Boolean).join(', ')}.`;
+  const alt = `${f.id}: ${f.line} ${[ps.version && `v${ps.version}`, ps.month && `${commas(ps.month)} downloads in the last 30 days`, ps.stars && `${ps.stars} stars`].filter(Boolean).join(', ')}.`;
   return doc(PW, H, alt, body);
 }
 
@@ -268,7 +268,7 @@ export function ossCard(name: ThemeName, c: Contribution, o: Oss): string {
   });
 
   body += `<line x1="${pad}" x2="${PW - pad}" y1="146.5" y2="146.5" stroke="${t.border}" stroke-opacity="0.7"/>`;
-  const facts = [`★ ${compact(o.stars)}`, o.npm && `v${o.npm.version}`, o.npm && `${compact(o.npm.month)}/mo`].filter(Boolean).join('  ·  ');
+  const facts = [o.stars && `★ ${compact(o.stars)}`, o.npm && `v${o.npm.version}`, o.npm && `${compact(o.npm.month)}/mo`].filter(Boolean).join('  ·  ');
   body += text(pad, 174, facts, { size: 12.5, fill: t.muted, mono: true });
   if (o.npm?.weekly.some((v) => v > 0)) body += sparkline(o.npm.weekly, PW - pad - 104, 156, 104, 24, t.tones.node);
 
@@ -276,7 +276,7 @@ export function ossCard(name: ThemeName, c: Contribution, o: Oss): string {
 }
 
 export function ossAlt(c: Contribution, o: Oss): string {
-  const facts = [prLabel(o.prs) + ' by me', `${commas(o.stars)} stars`, o.npm && `v${o.npm.version}`, o.npm && `${commas(o.npm.month)} npm downloads in the last 30 days`];
+  const facts = [prLabel(o.prs) + ' by me', o.stars && `${commas(o.stars)} stars`, o.npm && `v${o.npm.version}`, o.npm && `${commas(o.npm.month)} npm downloads in the last 30 days`];
   return `${c.repo}: ${o.description} ${facts.filter(Boolean).join(', ')}.`;
 }
 

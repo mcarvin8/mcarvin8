@@ -30,7 +30,7 @@ export function readme(p: Profile, d: Data): string {
     `<p align="center">\n${p.featured
       .map((f) => {
         const ps = projectStats(f, d);
-        const facts = [ps.version && `v${ps.version}`, ps.month && `${commas(ps.month)} downloads in the last 30 days`, `${ps.stars} stars`];
+        const facts = [ps.version && `v${ps.version}`, ps.month && `${commas(ps.month)} downloads in the last 30 days`, ps.stars && `${ps.stars} stars`];
         return link(`${gh}/${f.repo}`, pic(`project-${f.id}`, `${f.id}: ${f.line} ${facts.filter(Boolean).join(', ')}.`, 'width="49%"'));
       })
       .join('\n')}\n</p>`,
