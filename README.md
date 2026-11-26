@@ -10,7 +10,7 @@
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/label-projects-dark.svg"><img src="assets/label-projects-light.svg" width="100%" alt="Featured projects"></picture>
 
 <p align="center">
-<a href="https://github.com/mcarvin8/sf-decomposer"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-sf-decomposer-dark.svg"><img src="assets/project-sf-decomposer-light.svg" width="49%" alt="sf-decomposer: Splits big Salesforce metadata files into small, diff-friendly files and rebuilds them to deploy. Powered by the config-disassembler Rust crate. v7.17.0, 6,250 downloads in the last 30 days, 25 stars."></picture></a>
+<a href="https://github.com/mcarvin8/sf-decomposer"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-sf-decomposer-dark.svg"><img src="assets/project-sf-decomposer-light.svg" width="49%" alt="sf-decomposer: Splits big Salesforce metadata files into small, diff-friendly files and rebuilds them to deploy. Powered by the config-disassembler Rust crate. v7.18.0, 6,250 downloads in the last 30 days, 25 stars."></picture></a>
 <a href="https://github.com/mcarvin8/apex-code-coverage-transformer"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-apex-code-coverage-transformer-dark.svg"><img src="assets/project-apex-code-coverage-transformer-light.svg" width="49%" alt="apex-code-coverage-transformer: Turns Salesforce Apex code coverage JSON into reports for SonarQube, GitHub, GitLab, Azure DevOps and Bitbucket. v5.0.1, 20,868 downloads in the last 30 days, 23 stars."></picture></a>
 <a href="https://github.com/mcarvin8/smart-diff"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-smart-diff-dark.svg"><img src="assets/project-smart-diff-light.svg" width="49%" alt="smart-diff: AI-written, plain-English summaries of git diffs for PR descriptions, code review and release notes. v6.9.0, 2,334 downloads in the last 30 days, 0 stars."></picture></a>
 <a href="https://github.com/mcarvin8/sf-flow-coverage"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-sf-flow-coverage-dark.svg"><img src="assets/project-sf-flow-coverage-light.svg" width="49%" alt="sf-flow-coverage: Gets Salesforce orgs ready to deploy Flows as active. v0.9.3, 2,637 downloads in the last 30 days, 1 stars."></picture></a>
@@ -46,8 +46,8 @@ Found a bug or have an idea for one of my projects? Open an issue on that repo. 
 
 Want to collaborate on something new or ask something in general? [Open an issue here](https://github.com/mcarvin8/mcarvin8/issues).
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg"><img src="assets/stats-light.svg" width="100%" alt="307k npm downloads · last 12 months, 3.2k crates.io downloads · all time, 14 npm packages &amp; crates published, 3,330 contributions · last 12 months, 4 days current streak · best 19, 81 stars across 38 public repos"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg"><img src="assets/stats-light.svg" width="100%" alt="307k npm downloads · last 12 months, 3.2k crates.io downloads · all time, 14 npm packages &amp; crates published, 3,333 contributions · last 12 months, 5 days current streak · best 19, 81 stars across 38 public repos"></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg"><img src="assets/heatmap-light.svg" width="100%" alt="3,330 contributions in the last year"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg"><img src="assets/heatmap-light.svg" width="100%" alt="3,333 contributions in the last year"></picture>
 
 <p align="center"><sub>Cards drawn by <a href="https://github.com/mcarvin8/mcarvin8/tree/main/src">src/</a> in this repo · numbers redrawn every night by a GitHub Action</sub></p>

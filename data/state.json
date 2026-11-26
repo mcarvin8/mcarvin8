@@ -1,8 +1,8 @@
 {
  "fetched": {
-  "github": "2026-11-26T12:52:37.587Z",
-  "npm": "2026-11-26T12:52:37.587Z",
-  "crates": "2026-11-26T12:52:37.587Z"
+  "github": "2026-11-26T17:53:30.561Z",
+  "npm": "2026-11-26T17:53:30.561Z",
+  "crates": "2026-11-26T17:53:30.561Z"
  },
  "github": {
   "followers": 15,
@@ -48,7 +48,7 @@
    "sf-api-version": 0,
    "sfdx-org-model-python": 0
   },
-  "total": 3330,
+  "total": 3333,
   "days": [
    {
     "date": "2025-11-23",
@@ -1524,7 +1524,7 @@
    },
    {
     "date": "2026-11-26",
-    "count": 0
+    "count": 3
    }
   ]
  },
@@ -1551,7 +1551,7 @@
   },
   {
    "name": "sf-decomposer",
-   "version": "7.17.0",
+   "version": "7.18.0",
    "month": 6250,
    "year": 25188,
    "weekly": [
