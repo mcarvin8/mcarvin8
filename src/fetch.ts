@@ -38,12 +38,40 @@ export type Data = {
 
 export type Source = 'github' | 'npm' | 'crates' | 'oss' | 'pypi' | 'docker';
 
+// npm rate-limits bursts (a nightly run makes ~30 calls), so space calls to its hosts out a little.
+const MIN_GAP_MS: Record<string, number> = { 'registry.npmjs.org': 300, 'api.npmjs.org': 300 };
+const lastCall = new Map<string, number>();
+
+async function throttle(host: string): Promise<void> {
+  const gap = MIN_GAP_MS[host];
+  if (!gap) return;
+  const wait = (lastCall.get(host) ?? 0) + gap - Date.now();
+  if (wait > 0) await sleep(wait);
+  lastCall.set(host, Date.now());
+}
+
+/** How long to wait before retrying: the server's Retry-After when it sends one, else 2s, 4s, 8s, 16s. */
+function retryDelay(res: Response, attempt: number): number {
+  const header = res.headers.get('retry-after');
+  if (header) {
+    const seconds = Number(header);
+    const ms = Number.isFinite(seconds) ? seconds * 1000 : Date.parse(header) - Date.now();
+    if (Number.isFinite(ms)) return Math.min(Math.max(ms, 1000), 60_000);
+  }
+  return Math.min(2000 * 2 ** (attempt - 1), 30_000);
+}
+
 async function getJson<T>(url: string, init: RequestInit = {}): Promise<T> {
+  const host = new URL(url).host;
   for (let attempt = 1; ; attempt++) {
+    await throttle(host);
     const res = await fetch(url, { ...init, headers: { 'User-Agent': UA, Accept: 'application/json', ...init.headers } });
     if (res.ok) return (await res.json()) as T;
-    if (attempt >= 3 || (res.status < 500 && res.status !== 429)) throw new Error(`${res.status} ${res.statusText} for ${url}`);
-    await sleep(1500 * attempt);
+    const retryable = res.status === 429 || res.status >= 500;
+    if (attempt >= 5 || !retryable) throw new Error(`${res.status} ${res.statusText} for ${url}`);
+    const delay = retryDelay(res, attempt);
+    console.warn(`    ${res.status} from ${host}, retrying in ${Math.round(delay / 1000)}s`);
+    await sleep(delay);
   }
 }
 
