@@ -92,6 +92,8 @@
     { "repo": "sf-gitlab-cicd-template" }
   ],
   "contributions": [
+    { "repo": "forcedotcom/source-deploy-retrieve", "npm": "@salesforce/source-deploy-retrieve" },
+    { "repo": "salesforcecli/plugin-deploy-retrieve", "npm": "@salesforce/plugin-deploy-retrieve" },
     { "repo": "scolladon/sfdx-git-delta", "npm": "sfdx-git-delta" },
     { "repo": "scolladon/sf-git-merge-driver", "npm": "sf-git-merge-driver" },
     { "repo": "hardisgroupcom/sfdx-hardis", "npm": "sfdx-hardis" },

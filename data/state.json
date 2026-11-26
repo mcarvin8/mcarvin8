@@ -1,11 +1,11 @@
 {
  "fetched": {
-  "github": "2026-11-26T19:31:39.865Z",
-  "npm": "2026-11-26T19:31:39.865Z",
-  "crates": "2026-11-26T19:31:39.865Z",
-  "oss": "2026-11-26T19:31:39.865Z",
-  "pypi": "2026-11-26T19:31:39.865Z",
-  "docker": "2026-11-26T19:31:39.865Z"
+  "github": "2026-11-26T20:00:02.576Z",
+  "npm": "2026-11-26T20:00:02.576Z",
+  "crates": "2026-11-26T20:00:02.576Z",
+  "oss": "2026-11-26T20:00:02.576Z",
+  "pypi": "2026-11-26T20:00:02.576Z",
+  "docker": "2026-11-26T20:00:02.576Z"
  },
  "github": {
   "followers": 15,
@@ -73,7 +73,7 @@
     "language": "TypeScript"
    },
    "sf-package-combiner": {
-    "description": "Merge multiple Salesforce package.xml manifests into a single file for Salesforce CLI deployments.",
+    "description": "Merge multiple Salesforce package.xml manifests into 1 deployment manifest.",
     "language": "TypeScript"
    },
    "sfmon": {
@@ -205,7 +205,7 @@
     "language": "Python"
    }
   },
-  "total": 3342,
+  "total": 3344,
   "days": [
    {
     "date": "2025-11-23",
@@ -817,11 +817,11 @@
    },
    {
     "date": "2026-04-24",
-    "count": 29
+    "count": 30
    },
    {
     "date": "2026-04-25",
-    "count": 5
+    "count": 4
    },
    {
     "date": "2026-04-26",
@@ -845,11 +845,11 @@
    },
    {
     "date": "2026-05-01",
-    "count": 32
+    "count": 33
    },
    {
     "date": "2026-05-02",
-    "count": 13
+    "count": 12
    },
    {
     "date": "2026-05-03",
@@ -873,11 +873,11 @@
    },
    {
     "date": "2026-05-08",
-    "count": 5
+    "count": 6
    },
    {
     "date": "2026-05-09",
-    "count": 1
+    "count": 0
    },
    {
     "date": "2026-05-10",
@@ -957,11 +957,11 @@
    },
    {
     "date": "2026-05-29",
-    "count": 22
+    "count": 23
    },
    {
     "date": "2026-05-30",
-    "count": 1
+    "count": 0
    },
    {
     "date": "2026-05-31",
@@ -969,11 +969,11 @@
    },
    {
     "date": "2026-06-01",
-    "count": 15
+    "count": 16
    },
    {
     "date": "2026-06-02",
-    "count": 49
+    "count": 48
    },
    {
     "date": "2026-06-03",
@@ -985,11 +985,11 @@
    },
    {
     "date": "2026-06-05",
-    "count": 0
+    "count": 1
    },
    {
     "date": "2026-06-06",
-    "count": 1
+    "count": 0
    },
    {
     "date": "2026-06-07",
@@ -1049,11 +1049,11 @@
    },
    {
     "date": "2026-06-21",
-    "count": 1
+    "count": 2
    },
    {
     "date": "2026-06-22",
-    "count": 5
+    "count": 4
    },
    {
     "date": "2026-06-23",
@@ -1161,11 +1161,11 @@
    },
    {
     "date": "2026-07-19",
-    "count": 0
+    "count": 1
    },
    {
     "date": "2026-07-20",
-    "count": 14
+    "count": 13
    },
    {
     "date": "2026-07-21",
@@ -1269,11 +1269,11 @@
    },
    {
     "date": "2026-08-15",
-    "count": 8
+    "count": 9
    },
    {
     "date": "2026-08-16",
-    "count": 18
+    "count": 17
    },
    {
     "date": "2026-08-17",
@@ -1681,7 +1681,7 @@
    },
    {
     "date": "2026-11-26",
-    "count": 12
+    "count": 14
    }
   ]
  },
@@ -1971,6 +1971,58 @@
  ],
  "today": "2026-11-26",
  "oss": [
+  {
+   "repo": "forcedotcom/source-deploy-retrieve",
+   "description": "JavaScript toolkit for working with Salesforce metadata.",
+   "avatar": "data:image/png;base64,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",
+   "stars": 98,
+   "prs": 1,
+   "npm": {
+    "name": "@salesforce/source-deploy-retrieve",
+    "version": "13.14.1",
+    "month": 2751197,
+    "weekly": [
+     696385,
+     704848,
+     727310,
+     779854,
+     772550,
+     641059,
+     531868,
+     855890,
+     837325,
+     504792,
+     538416,
+     550824
+    ]
+   }
+  },
+  {
+   "repo": "salesforcecli/plugin-deploy-retrieve",
+   "description": "deploy and retrieve commands for sf",
+   "avatar": "data:image/png;base64,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",
+   "stars": 19,
+   "prs": 1,
+   "npm": {
+    "name": "@salesforce/plugin-deploy-retrieve",
+    "version": "4.3.3",
+    "month": 1388928,
+    "weekly": [
+     420085,
+     422559,
+     436634,
+     473421,
+     473065,
+     401708,
+     335608,
+     535286,
+     519705,
+     216761,
+     233357,
+     222001
+    ]
+   }
+  },
   {
    "repo": "scolladon/sfdx-git-delta",
    "description": "Generate the sfdx content in source format from two git commits",

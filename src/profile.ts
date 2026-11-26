@@ -7,7 +7,7 @@ export type Listing = { repo: string; npm?: string[]; crates?: string[]; pypi?: 
 
 export type Featured = Listing & { id: string; line: string; chips: Tag[] };
 
-/** An upstream project I contribute to. `repo` is owner/name; `npm` is its package, when it has one. Its description comes from GitHub. */
+/** An upstream project I contribute to. `repo` is owner/name; `npm` is its package, when it has one. Its description comes from GitHub, or npm when GitHub has none. */
 export type Contribution = { repo: string; npm?: string };
 
 export type Profile = {

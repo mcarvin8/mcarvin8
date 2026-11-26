@@ -14,7 +14,7 @@ export type Crate = { name: string; version: string; downloads: number; month: n
 /** One upstream repo I contribute to. `avatar` is the owner's avatar as a data URI, since README images can't load remote files. */
 export type Oss = {
   repo: string;
-  /** The repo's own GitHub description. */
+  /** The repo's GitHub description, or its npm package's when GitHub has none. */
   description: string;
   avatar: string;
   stars: number;
@@ -39,7 +39,7 @@ export type Data = {
 export type Source = 'github' | 'npm' | 'crates' | 'oss' | 'pypi' | 'docker';
 
 // npm rate-limits bursts (a nightly run makes ~30 calls), so space calls to its hosts out a little.
-const MIN_GAP_MS: Record<string, number> = { 'registry.npmjs.org': 300, 'api.npmjs.org': 300 };
+const MIN_GAP_MS: Record<string, number> = { 'registry.npmjs.org': 300, 'api.npmjs.org': 1000 };
 const lastCall = new Map<string, number>();
 
 async function throttle(host: string): Promise<void> {
@@ -208,15 +208,19 @@ export async function fetchOss(p: Profile): Promise<Oss[]> {
     const avatar = `data:${type};base64,${Buffer.from(await img.arrayBuffer()).toString('base64')}`;
 
     let npm: Oss['npm'];
+    let npmDescription = '';
     if (c.npm) {
-      const latest = await getJson<{ version: string }>(`https://registry.npmjs.org/${c.npm}/latest`);
+      const latest = await getJson<{ version: string; description?: string }>(`https://registry.npmjs.org/${c.npm}/latest`);
       type Range = { downloads: { day: string; downloads: number }[] };
       const r = await getJson<Range>(`https://api.npmjs.org/downloads/range/${daysAgo(84)}:${daysAgo(1)}/${c.npm}`);
       const byDay = new Map(r.downloads.map((d) => [d.day, d.downloads]));
       const month = r.downloads.slice(-30).reduce((a, d) => a + d.downloads, 0);
       npm = { name: c.npm, version: latest.version, month, weekly: weekly(byDay) };
+      npmDescription = latest.description?.trim() ?? '';
     }
-    out.push({ repo: c.repo, description: repo.description?.trim() ?? '', avatar, stars: repo.stargazerCount, prs: res[`s${i}`].issueCount, npm });
+    // Some repos have no GitHub description; their npm package usually does.
+    const description = repo.description?.trim() || npmDescription;
+    out.push({ repo: c.repo, description, avatar, stars: repo.stargazerCount, prs: res[`s${i}`].issueCount, npm });
   }
   return out;
 }
