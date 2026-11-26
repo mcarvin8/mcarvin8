@@ -49,7 +49,6 @@ function draw(p: ReturnType<typeof loadProfile>, d: Data): Record<string, string
     out[`hero-${t}.svg`] = cards.hero(t, p);
     for (const l of p.links) out[`badge-${l.id}-${t}.svg`] = cards.badge(t, l);
     out[`stats-${t}.svg`] = cards.stats(t, s, d.today);
-    out[`heatmap-${t}.svg`] = cards.heatmap(t, d);
     out[`label-projects-${t}.svg`] = cards.label(t, 'Featured projects', 'live from npm · crates.io · GitHub');
     out[`label-oss-${t}.svg`] = cards.label(t, 'Open-source contributions', 'Salesforce community', 'node');
     out[`label-contact-${t}.svg`] = cards.label(t, 'Get in touch', 'issues are open', 'ai');

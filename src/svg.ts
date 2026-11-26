@@ -14,7 +14,6 @@ export type Theme = {
   muted: string;
   accent: string;
   accent2: string;
-  heat: string[];
   term: { bg: string; border: string; fg: string; muted: string; prompt: string; ok: string };
   chipAlpha: number;
   tones: Record<string, string>;
@@ -29,7 +28,6 @@ const LIGHT: Theme = {
   muted: '#59636e',
   accent: '#0176d3',
   accent2: '#00a1e0',
-  heat: ['#ebedf0', '#c6e2fb', '#7fbdf2', '#2f8ee0', '#0b5cab'],
   term: { bg: '#0f1623', border: '#0f1623', fg: '#e6edf3', muted: '#8b949e', prompt: '#4fb6f0', ok: '#56d364' },
   chipAlpha: 0.1,
   tones: {
@@ -58,7 +56,6 @@ const DARK: Theme = {
   muted: '#9198a1',
   accent: '#4fb6f0',
   accent2: '#2f8ee0',
-  heat: ['#161b22', '#0e3a66', '#155a9c', '#2f8ee0', '#79c4ff'],
   term: { bg: '#010409', border: '#30363d', fg: '#e6edf3', muted: '#8b949e', prompt: '#4fb6f0', ok: '#56d364' },
   chipAlpha: 0.16,
   tones: {

@@ -54,7 +54,6 @@ export function readme(p: Profile, d: Data): string {
   );
 
   out.push(pic('stats', statsTiles(s).map((x) => `${x.value} ${x.label}`).join(', ')));
-  out.push(pic('heatmap', `${commas(d.github.total)} contributions in the last year`));
 
   out.push(
     `<p align="center"><sub>Cards drawn by <a href="${gh}/${p.user}/tree/main/src">src/</a> in this repo · numbers redrawn every night by a GitHub Action</sub></p>`,

@@ -191,67 +191,6 @@ export function fmtDate(iso: string): string {
   return new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 }
 
-// ---------- contribution heatmap ----------
-
-export function heatmap(name: ThemeName, d: Data): string {
-  const t = theme(name);
-  const H = 218;
-  const cell = 11;
-  const step = 14;
-  const x0 = 58;
-  const y0 = 82;
-  const days = d.github.days;
-
-  // Thresholds from the spread of non-zero days, so one huge day doesn't wash the rest out.
-  const nz = days.map((x) => x.count).filter((c) => c > 0).sort((a, b) => a - b);
-  const q = (f: number) => nz[Math.min(nz.length - 1, Math.floor(nz.length * f))] ?? 1;
-  const cuts = [q(0.25), q(0.5), q(0.75)];
-  const level = (c: number) => (c === 0 ? 0 : c <= cuts[0] ? 1 : c <= cuts[1] ? 2 : c <= cuts[2] ? 3 : 4);
-
-  const first = new Date(`${days[0].date}T00:00:00Z`).getUTCDay();
-  let cells = '';
-  let months = '';
-  let lastMonth = -1;
-  let lastLabelCol = -10;
-  days.forEach((day, i) => {
-    const idx = i + first;
-    const col = Math.floor(idx / 7);
-    const row = idx % 7;
-    cells += `<rect x="${x0 + col * step}" y="${y0 + row * step}" width="${cell}" height="${cell}" rx="2.5" fill="${t.heat[level(day.count)]}"/>`;
-    const dt = new Date(`${day.date}T00:00:00Z`);
-    if (row === 0 || i === 0) {
-      const m = dt.getUTCMonth();
-      if (m !== lastMonth) {
-        if (col - lastLabelCol >= 3) {
-          months += text(x0 + col * step, y0 - 10, dt.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' }), { size: 11.5, fill: t.muted });
-          lastLabelCol = col;
-        }
-        lastMonth = m;
-      }
-    }
-  });
-  const dow = [[1, 'Mon'], [3, 'Wed'], [5, 'Fri']] as const;
-  const dowSvg = dow.map(([row, l]) => text(x0 - 10, y0 + row * step + 9.5, l, { size: 11, fill: t.muted, anchor: 'end' })).join('');
-
-  const legendX = W - 24 - 5 * step - 34;
-  const legend =
-    text(legendX - 8, H - 18, 'Less', { size: 11, fill: t.muted, anchor: 'end' }) +
-    t.heat.map((c, i) => `<rect x="${legendX + i * step}" y="${H - 28}" width="${cell}" height="${cell}" rx="2.5" fill="${c}"/>`).join('') +
-    text(legendX + 5 * step + 4, H - 18, 'More', { size: 11, fill: t.muted });
-
-  const s = streaks(days);
-  const title = `${commas(d.github.total)} contributions in the last year`;
-  const body =
-    frame(t, W, H) +
-    text(24, 40, title, { size: 18, fill: t.fg, weight: 700 }) +
-    text(W - 24, 40, `streak ${s.current} · best ${s.best}`, { size: 12, fill: t.muted, mono: true, anchor: 'end' }) +
-    months +
-    dowSvg +
-    cells +
-    legend;
-  return doc(W, H, title, body);
-}
-
 // ---------- section label ----------
 
 export function label(name: ThemeName, title: string, sub: string, tone = 'sf'): string {

@@ -48,6 +48,4 @@ Want to collaborate on something new or ask something in general? [Open an issue
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg"><img src="assets/stats-light.svg" width="100%" alt="307k npm downloads · last 12 months, 3.2k crates.io downloads · all time, 14 npm packages &amp; crates published, 3,333 contributions · last 12 months, 5 days current streak · best 19, 81 stars across 38 public repos"></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg"><img src="assets/heatmap-light.svg" width="100%" alt="3,333 contributions in the last year"></picture>
-
 <p align="center"><sub>Cards drawn by <a href="https://github.com/mcarvin8/mcarvin8/tree/main/src">src/</a> in this repo · numbers redrawn every night by a GitHub Action</sub></p>
