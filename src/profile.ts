@@ -2,7 +2,10 @@ import { readFileSync } from 'node:fs';
 
 export type Tag = [label: string, tone: string];
 
-export type Featured = { id: string; repo: string; npm?: string[]; crates?: string[]; line: string; chips: Tag[] };
+/** A repo of mine and the registries it publishes to. `docker` names are Docker Hub repos (owner/name). */
+export type Listing = { repo: string; npm?: string[]; crates?: string[]; pypi?: string[]; docker?: string[] };
+
+export type Featured = Listing & { id: string; line: string; chips: Tag[] };
 
 /** An upstream project I contribute to. `repo` is owner/name; `npm` is its package, when it has one. Its description comes from GitHub. */
 export type Contribution = { repo: string; npm?: string };
@@ -18,7 +21,7 @@ export type Profile = {
   featured: Featured[];
   toolbox: Tag[];
   /** Smaller tiles under the featured cards. Descriptions and languages come from GitHub. */
-  more: Pick<Featured, 'repo' | 'npm' | 'crates'>[];
+  more: Listing[];
   contributions: Contribution[];
 };
 

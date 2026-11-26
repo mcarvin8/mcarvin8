@@ -1,4 +1,4 @@
-// Reads every number the cards show from public sources: GitHub GraphQL, the npm registry and crates.io.
+// Reads every number the cards show from public sources: GitHub GraphQL, npm, crates.io, PyPI and Docker Hub.
 import { execSync } from 'node:child_process';
 import type { Profile } from './profile.js';
 
@@ -6,6 +6,9 @@ const UA = 'profile-readme-builder';
 
 export type Day = { date: string; count: number };
 export type NpmPkg = { name: string; version: string; month: number; year: number; weekly: number[] };
+export type PypiPkg = { name: string; version: string; month: number; weekly: number[] };
+/** Docker Hub only reports an all-time pull count, so there is no monthly figure or history. */
+export type DockerImage = { name: string; pulls: number };
 export type Crate = { name: string; version: string; downloads: number; month: number; weekly: number[] };
 
 /** One upstream repo I contribute to. `avatar` is the owner's avatar as a data URI, since README images can't load remote files. */
@@ -28,10 +31,12 @@ export type Data = {
   npm: NpmPkg[];
   crates: Crate[];
   oss: Oss[];
+  pypi: PypiPkg[];
+  docker: DockerImage[];
   fetched: Record<Source, string>;
 };
 
-export type Source = 'github' | 'npm' | 'crates' | 'oss';
+export type Source = 'github' | 'npm' | 'crates' | 'oss' | 'pypi' | 'docker';
 
 async function getJson<T>(url: string, init: RequestInit = {}): Promise<T> {
   for (let attempt = 1; ; attempt++) {
@@ -188,9 +193,39 @@ export async function fetchOss(p: Profile): Promise<Oss[]> {
   return out;
 }
 
+/** Every registry name of one kind listed anywhere in profile.json. */
+const listed = (p: Profile, key: 'pypi' | 'docker') => [...new Set([...p.featured, ...p.more].flatMap((l) => l[key] ?? []))];
+
+/** PyPI version from pypi.org; daily downloads, without mirror traffic, from pypistats.org. */
+export async function fetchPypi(p: Profile): Promise<PypiPkg[]> {
+  const out: PypiPkg[] = [];
+  for (const name of listed(p, 'pypi')) {
+    const info = await getJson<{ info: { version: string } }>(`https://pypi.org/pypi/${name}/json`);
+    type Overall = { data: { category: string; date: string; downloads: number }[] };
+    const stats = await getJson<Overall>(`https://pypistats.org/api/packages/${name}/overall?mirrors=false`);
+    const byDay = new Map<string, number>();
+    for (const d of stats.data) if (d.category === 'without_mirrors') byDay.set(d.date, (byDay.get(d.date) ?? 0) + d.downloads);
+    const month = [...Array(30).keys()].reduce((a, i) => a + (byDay.get(daysAgo(i + 1)) ?? 0), 0);
+    out.push({ name, version: info.info.version, month, weekly: weekly(byDay) });
+    await sleep(500); // pypistats.org is a small free service
+  }
+  return out;
+}
+
+export async function fetchDocker(p: Profile): Promise<DockerImage[]> {
+  const out: DockerImage[] = [];
+  for (const name of listed(p, 'docker')) {
+    const r = await getJson<{ pull_count: number }>(`https://hub.docker.com/v2/repositories/${name}/`);
+    out.push({ name, pulls: r.pull_count });
+  }
+  return out;
+}
+
 export const fetchers: Record<Source, (p: Profile) => Promise<unknown>> = {
   github: fetchGithub,
   npm: fetchNpm,
   crates: fetchCrates,
   oss: fetchOss,
+  pypi: fetchPypi,
+  docker: fetchDocker,
 };

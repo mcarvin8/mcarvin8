@@ -2,8 +2,8 @@
 // with plain Markdown for the parts that need clickable links.
 import type { Data } from './fetch.js';
 import type { Profile } from './profile.js';
-import { ossAlt, prLabel, projectStats, statsTiles, summarize, tileAlt, tileInfo } from './cards.js';
-import { commas, esc } from './svg.js';
+import { longFacts, ossAlt, prLabel, projectStats, statsTiles, summarize, tileAlt, tileInfo } from './cards.js';
+import { esc } from './svg.js';
 
 const pic = (file: string, alt: string, attrs = 'width="100%"') =>
   `<picture><source media="(prefers-color-scheme: dark)" srcset="assets/${file}-dark.svg"><img src="assets/${file}-light.svg" ${attrs} alt="${esc(alt)}"></picture>`;
@@ -30,8 +30,7 @@ export function readme(p: Profile, d: Data): string {
     `<p align="center">\n${p.featured
       .map((f) => {
         const ps = projectStats(f, d);
-        const facts = [ps.version && `v${ps.version}`, ps.month && `${commas(ps.month)} downloads in the last 30 days`, ps.stars && `${ps.stars} stars`];
-        return link(`${gh}/${f.repo}`, pic(`project-${f.id}`, `${f.id}: ${f.line} ${facts.filter(Boolean).join(', ')}.`, 'width="49%"'));
+        return link(`${gh}/${f.repo}`, pic(`project-${f.id}`, `${f.id}: ${f.line} ${longFacts(ps).join(', ')}.`, 'width="49%"'));
       })
       .join('\n')}\n</p>`,
   );

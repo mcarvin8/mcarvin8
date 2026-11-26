@@ -85,8 +85,8 @@
     { "repo": "sf-git-ai-meta-insights", "npm": ["sf-git-ai-meta-insights"] },
     { "repo": "sf-package-list", "npm": ["sf-package-list"] },
     { "repo": "sf-cat", "npm": ["sf-cat"] },
-    { "repo": "sfmon" },
-    { "repo": "statuspage-prometheus-exporter" },
+    { "repo": "sfmon", "pypi": ["sfmon"], "docker": ["mcarvin8/sfmon"] },
+    { "repo": "statuspage-prometheus-exporter", "pypi": ["statuspage-prometheus-exporter"], "docker": ["mcarvin8/statuspage-prometheus-exporter"] },
     { "repo": "sf-gitlab-cicd-template" }
   ],
   "contributions": [

@@ -1,6 +1,6 @@
 // Every card the README shows. Each function returns one finished SVG document for one theme.
 import type { Data, Day, Oss } from './fetch.js';
-import type { Contribution, Featured, Profile, Tag } from './profile.js';
+import type { Contribution, Featured, Listing, Profile, Tag } from './profile.js';
 import { chip, chipRow, commas, compact, doc, esc, r, sparkline, text, textWidth, theme, wrap, type ThemeName } from './svg.js';
 
 const W = 840;
@@ -43,7 +43,7 @@ export function summarize(d: Data): Summary {
     npmYear: d.npm.reduce((a, p) => a + p.year, 0),
     npmMonth: d.npm.reduce((a, p) => a + p.month, 0),
     cratesAll: d.crates.reduce((a, c) => a + c.downloads, 0),
-    packages: d.npm.length + d.crates.length,
+    packages: d.npm.length + d.crates.length + d.pypi.length + d.docker.length,
     contributions: d.github.total,
     streak: s.current,
     bestStreak: s.best,
@@ -52,17 +52,20 @@ export function summarize(d: Data): Summary {
   };
 }
 
-export type ProjectStats = { version?: string; month: number; stars: number; weekly: number[]; registry: string };
+/** `month` and `weekly` sum npm, crates.io and PyPI downloads; `pulls` is the all-time Docker Hub count. */
+export type ProjectStats = { version?: string; month: number; pulls: number; stars: number; weekly: number[]; registry: string };
 
-export function projectStats(f: Pick<Featured, 'repo' | 'npm' | 'crates'>, d: Data): ProjectStats {
+export function projectStats(f: Listing, d: Data): ProjectStats {
   const npm = d.npm.filter((p) => f.npm?.includes(p.name));
   const crates = d.crates.filter((c) => f.crates?.includes(c.name));
-  const weekly = Array.from({ length: 12 }, (_, i) =>
-    [...npm, ...crates].reduce((a, x) => a + (x.weekly[i] ?? 0), 0),
-  );
+  const pypi = (d.pypi ?? []).filter((p) => f.pypi?.includes(p.name));
+  const docker = (d.docker ?? []).filter((x) => f.docker?.includes(x.name));
+  const pkgs = [...npm, ...crates, ...pypi];
+  const weekly = Array.from({ length: 12 }, (_, i) => pkgs.reduce((a, x) => a + (x.weekly[i] ?? 0), 0));
   return {
-    version: crates[0]?.version ?? npm[0]?.version,
-    month: npm.reduce((a, p) => a + p.month, 0) + crates.reduce((a, c) => a + c.month, 0),
+    version: crates[0]?.version ?? npm[0]?.version ?? pypi[0]?.version,
+    month: pkgs.reduce((a, p) => a + p.month, 0),
+    pulls: docker.reduce((a, x) => a + x.pulls, 0),
     stars: d.github.starsByRepo[f.repo] ?? 0,
     weekly,
     registry: [crates.length ? 'crates.io' : '', npm.length ? 'npm' : ''].filter(Boolean).join(' + '),
@@ -156,7 +159,7 @@ export function statsTiles(s: Summary): { value: string; label: string }[] {
   return [
     { value: compact(s.npmYear), label: 'npm downloads · last 12 months' },
     { value: compact(s.cratesAll), label: 'crates.io downloads · all time' },
-    { value: String(s.packages), label: 'npm packages & crates published' },
+    { value: String(s.packages), label: 'packages · npm, crates, PyPI, Docker' },
     { value: commas(s.contributions), label: 'contributions · last 12 months' },
     { value: `${s.streak} ${s.streak === 1 ? 'day' : 'days'}`, label: `current streak · best ${s.bestStreak}` },
     { value: String(s.stars), label: `stars across ${s.publicRepos} public repos` },
@@ -229,12 +232,12 @@ export function project(name: ThemeName, f: Featured, ps: ProjectStats): string 
   body += chipRow(t, pad, 132, PW - pad, f.chips, 11).svg;
   body += `<line x1="${pad}" x2="${PW - pad}" y1="168.5" y2="168.5" stroke="${t.border}" stroke-opacity="0.7"/>`;
 
-  const facts = [ps.version ? `v${ps.version}` : '', ps.month ? `${compact(ps.month)}/mo` : '', ps.stars ? `★ ${ps.stars}` : ''].filter(Boolean).join('  ·  ');
+  const facts = shortFacts(ps, PW - pad * 2 - 116, 12.5);
   body += text(pad, 196, facts, { size: 12.5, fill: t.muted, mono: true });
   if (ps.weekly.some((v) => v > 0)) {
     body += sparkline(ps.weekly, PW - pad - 104, 178, 104, 24, t.accent);
   }
-  const alt = `${f.id}: ${f.line} ${[ps.version && `v${ps.version}`, ps.month && `${commas(ps.month)} downloads in the last 30 days`, ps.stars && `${ps.stars} stars`].filter(Boolean).join(', ')}.`;
+  const alt = `${f.id}: ${f.line} ${longFacts(ps).join(', ')}.`;
   return doc(PW, H, alt, body);
 }
 
@@ -313,19 +316,37 @@ export function tile(name: ThemeName, info: TileInfo): string {
   });
 
   body += `<line x1="${pad}" x2="${TW - pad}" y1="120.5" y2="120.5" stroke="${t.border}" stroke-opacity="0.7"/>`;
-  body += text(pad, 139, tileFacts(info, compact).join('  ·  '), { size: 11.5, fill: t.muted, mono: true });
-  if (ps.weekly.some((v) => v > 0)) body += sparkline(ps.weekly, TW - pad - 56, 125, 56, 16, t.accent);
+  // Tiles are narrow: when the facts need the room, the facts win over the sparkline.
+  const room = TW - pad * 2 - 64;
+  const facts = shortFacts(ps, room, 11.5, ' · ');
+  body += text(pad, 139, facts, { size: 11.5, fill: t.muted, mono: true });
+  if (ps.weekly.some((v) => v > 0) && textWidth(facts, 11.5, { mono: true }) <= room) {
+    body += sparkline(ps.weekly, TW - pad - 56, 125, 56, 16, t.accent);
+  }
   return doc(TW, H, tileAlt(info), body);
 }
 
-function tileFacts({ ps }: TileInfo, n: (x: number) => string): string[] {
-  return [ps.version && `v${ps.version}`, ps.month ? `${n(ps.month)}/mo` : '', ps.stars ? `★ ${ps.stars}` : ''].filter((x): x is string => !!x);
+/** The facts line under a card, e.g. "v4.1.0  ·  429/mo  ·  4.3k pulls  ·  ★ 2". Stars go first when it doesn't fit. */
+export function shortFacts(ps: ProjectStats, maxWidth: number, size: number, sep = '  ·  '): string {
+  const base = [ps.version && `v${ps.version}`, ps.month && `${compact(ps.month)}/mo`, ps.pulls && `${compact(ps.pulls)} pulls`].filter(Boolean) as string[];
+  const withStars = ps.stars ? [...base, `★ ${ps.stars}`] : base;
+  const line = (xs: string[]) => xs.join(sep);
+  return textWidth(line(withStars), size, { mono: true }) <= maxWidth ? line(withStars) : line(base);
+}
+
+/** The same facts in words, for alt text. */
+export function longFacts(ps: ProjectStats): string[] {
+  return [
+    ps.version && `v${ps.version}`,
+    ps.month && `${commas(ps.month)} downloads in the last 30 days`,
+    ps.pulls && `${commas(ps.pulls)} Docker pulls`,
+    ps.stars && `${ps.stars} stars`,
+  ].filter(Boolean) as string[];
 }
 
 export function tileAlt(info: TileInfo): string {
   const { ps } = info;
-  const facts = [info.language, ps.version && `v${ps.version}`, ps.month && `${commas(ps.month)} downloads in the last 30 days`, ps.stars && `${ps.stars} stars`];
-  return `${info.name}: ${info.description} ${facts.filter(Boolean).join(', ')}.`;
+  return `${info.name}: ${info.description} ${[info.language, ...longFacts(ps)].filter(Boolean).join(', ')}.`;
 }
 
 // ---------- toolbox ----------
