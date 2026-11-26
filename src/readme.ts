@@ -8,7 +8,8 @@ import { commas, esc } from './svg.js';
 const pic = (file: string, alt: string, attrs = 'width="100%"') =>
   `<picture><source media="(prefers-color-scheme: dark)" srcset="assets/${file}-dark.svg"><img src="assets/${file}-light.svg" ${attrs} alt="${esc(alt)}"></picture>`;
 
-const link = (url: string, inner: string) => `<a href="${esc(url)}">${inner}</a>`;
+const link = (url: string, inner: string, title?: string) =>
+  `<a href="${esc(url)}"${title ? ` title="${esc(title)}"` : ''}>${inner}</a>`;
 
 export function readme(p: Profile, d: Data): string {
   const s = summarize(d);
@@ -17,7 +18,12 @@ export function readme(p: Profile, d: Data): string {
 
   out.push(link(gh, pic('hero', `${p.hero.title} ${p.hero.tagline}`)));
   out.push(
-    `<p align="center">\n${p.links.map((l) => link(l.url, pic(`badge-${l.id}`, `${l.label} ${l.handle}`, 'height="44"'))).join('\n')}\n</p>`,
+    `<p align="center">\n${p.links
+      .map((l) => {
+        const attrs = l.title ? `height="44" title="${esc(l.title)}"` : 'height="44"';
+        return link(l.url, pic(`badge-${l.id}`, l.title ?? `${l.label} ${l.handle}`, attrs), l.title);
+      })
+      .join('\n')}\n</p>`,
   );
   out.push(pic('label-projects', 'Featured projects'));
   out.push(
@@ -45,12 +51,6 @@ export function readme(p: Profile, d: Data): string {
         return o ? [link(`https://github.com/${c.repo}`, pic(`oss-${c.repo.replace('/', '-')}`, ossAlt(c, o), 'width="49%"'))] : [];
       })
       .join('\n')}\n</p>`,
-  );
-
-  out.push(pic('label-contact', 'Get in touch'));
-  out.push(
-    `Found a bug or have an idea for one of my projects? Open an issue on that repo. Contributions are welcome from forks.\n\n` +
-      `Want to collaborate on something new or ask something in general? [Open an issue here](${gh}/${p.user}/issues).`,
   );
 
   out.push(pic('stats', statsTiles(s).map((x) => `${x.value} ${x.label}`).join(', ')));

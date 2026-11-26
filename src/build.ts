@@ -56,7 +56,6 @@ function draw(p: ReturnType<typeof loadProfile>, d: Data): Record<string, string
       const o = d.oss.find((x) => x.repo === c.repo);
       if (o) out[`oss-${c.repo.replace('/', '-')}-${t}.svg`] = cards.ossCard(t, c, o);
     }
-    out[`label-contact-${t}.svg`] = cards.label(t, 'Get in touch', 'issues are open', 'ai');
     for (const f of p.featured) out[`project-${f.id}-${t}.svg`] = cards.project(t, f, cards.projectStats(f, d));
     out[`toolbox-${t}.svg`] = cards.toolbox(t, p.toolbox);
   }

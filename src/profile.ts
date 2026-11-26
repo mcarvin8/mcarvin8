@@ -11,7 +11,8 @@ export type Profile = {
   user: string;
   name: string;
   hero: { kicker: string; title: string; tagline: string; chips: Tag[]; terminal: [kind: 'cmd' | 'ok' | 'out', line: string][] };
-  links: { id: string; label: string; handle: string; url: string; tone: string }[];
+  /** `title` is hover text shown on the badge (and read by screen readers). */
+  links: { id: string; label: string; handle: string; url: string; tone: string; title?: string }[];
   npm: { maintainer: string; exclude: string[] };
   crates: { userId: number };
   featured: Featured[];

@@ -4,7 +4,7 @@
 <a href="https://github.com/mcarvin8"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-gh-dark.svg"><img src="assets/badge-gh-light.svg" height="44" alt="GitHub @mcarvin8"></picture></a>
 <a href="https://www.npmjs.com/~mcarvin"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-npm-dark.svg"><img src="assets/badge-npm-light.svg" height="44" alt="npm ~mcarvin"></picture></a>
 <a href="https://crates.io/users/mcarvin8"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-crates-dark.svg"><img src="assets/badge-crates-light.svg" height="44" alt="crates.io mcarvin8"></picture></a>
-<a href="https://github.com/mcarvin8/mcarvin8/issues"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-hi-dark.svg"><img src="assets/badge-hi-light.svg" height="44" alt="Say hi open an issue"></picture></a>
+<a href="https://github.com/mcarvin8/mcarvin8/issues" title="Get in touch: found a bug or have an idea for one of my projects? Open an issue on that repo. Contributions are welcome from forks. Want to collaborate on something new or ask something in general? Open an issue here."><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-hi-dark.svg"><img src="assets/badge-hi-light.svg" height="44" title="Get in touch: found a bug or have an idea for one of my projects? Open an issue on that repo. Contributions are welcome from forks. Want to collaborate on something new or ask something in general? Open an issue here." alt="Get in touch: found a bug or have an idea for one of my projects? Open an issue on that repo. Contributions are welcome from forks. Want to collaborate on something new or ask something in general? Open an issue here."></picture></a>
 </p>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/label-projects-dark.svg"><img src="assets/label-projects-light.svg" width="100%" alt="Featured projects"></picture>
@@ -39,12 +39,6 @@
 <a href="https://github.com/hardisgroupcom/sfdx-hardis"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/oss-hardisgroupcom-sfdx-hardis-dark.svg"><img src="assets/oss-hardisgroupcom-sfdx-hardis-light.svg" width="49%" alt="hardisgroupcom/sfdx-hardis: Salesforce DevOps and Monitoring platform. 13 PRs merged by me, 441 stars, v8.27.0, 48,949 npm downloads in the last 30 days."></picture></a>
 <a href="https://github.com/wisefoxme/apex-test-list"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/oss-wisefoxme-apex-test-list-dark.svg"><img src="assets/oss-wisefoxme-apex-test-list-light.svg" width="49%" alt="wisefoxme/apex-test-list: Identifies the Apex tests to run based on test annotations. 39 PRs merged by me, 17 stars, v1.17.0, 8,129 npm downloads in the last 30 days."></picture></a>
 </p>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/label-contact-dark.svg"><img src="assets/label-contact-light.svg" width="100%" alt="Get in touch"></picture>
-
-Found a bug or have an idea for one of my projects? Open an issue on that repo. Contributions are welcome from forks.
-
-Want to collaborate on something new or ask something in general? [Open an issue here](https://github.com/mcarvin8/mcarvin8/issues).
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg"><img src="assets/stats-light.svg" width="100%" alt="308k npm downloads · last 12 months, 3.2k crates.io downloads · all time, 14 npm packages &amp; crates published, 3,336 contributions · last 12 months, 5 days current streak · best 19, 81 stars across 38 public repos"></picture>
 

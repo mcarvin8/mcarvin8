@@ -22,7 +22,14 @@
     { "id": "gh", "label": "GitHub", "handle": "@mcarvin8", "url": "https://github.com/mcarvin8", "tone": "fg" },
     { "id": "npm", "label": "npm", "handle": "~mcarvin", "url": "https://www.npmjs.com/~mcarvin", "tone": "npm" },
     { "id": "crates", "label": "crates.io", "handle": "mcarvin8", "url": "https://crates.io/users/mcarvin8", "tone": "rust" },
-    { "id": "hi", "label": "Say hi", "handle": "open an issue", "url": "https://github.com/mcarvin8/mcarvin8/issues", "tone": "sf" }
+    {
+      "id": "hi",
+      "label": "Say hi",
+      "handle": "open an issue",
+      "url": "https://github.com/mcarvin8/mcarvin8/issues",
+      "tone": "sf",
+      "title": "Get in touch: found a bug or have an idea for one of my projects? Open an issue on that repo. Contributions are welcome from forks. Want to collaborate on something new or ask something in general? Open an issue here."
+    }
   ],
   "npm": {
     "maintainer": "mcarvin",
