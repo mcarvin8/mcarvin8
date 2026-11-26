@@ -19,7 +19,7 @@ const STALE_DAYS = 3;
 async function gather(offline: boolean, p: ReturnType<typeof loadProfile>): Promise<{ data: Data; problems: string[] }> {
   const saved: Partial<Data> = existsSync(STATE) ? JSON.parse(readFileSync(STATE, 'utf8')) : {};
   if (offline) {
-    if (!saved.github || !saved.npm || !saved.crates) throw new Error('No saved data yet: run `npm run build` once online.');
+    if ((Object.keys(fetchers) as Source[]).some((src) => !saved[src])) throw new Error('No saved data yet: run `npm run build` once online.');
     return { data: saved as Data, problems: [] };
   }
   const now = new Date().toISOString();
@@ -50,7 +50,12 @@ function draw(p: ReturnType<typeof loadProfile>, d: Data): Record<string, string
     for (const l of p.links) out[`badge-${l.id}-${t}.svg`] = cards.badge(t, l);
     out[`stats-${t}.svg`] = cards.stats(t, s, d.today);
     out[`label-projects-${t}.svg`] = cards.label(t, 'Featured projects', 'live from npm · crates.io · GitHub');
-    out[`label-oss-${t}.svg`] = cards.label(t, 'Open-source contributions', 'Salesforce community', 'node');
+    const prs = d.oss.reduce((a, o) => a + o.prs, 0);
+    out[`label-oss-${t}.svg`] = cards.label(t, 'Open-source contributions', `${cards.prLabel(prs)} upstream`, 'node');
+    for (const c of p.contributions) {
+      const o = d.oss.find((x) => x.repo === c.repo);
+      if (o) out[`oss-${c.repo.replace('/', '-')}-${t}.svg`] = cards.ossCard(t, c, o);
+    }
     out[`label-contact-${t}.svg`] = cards.label(t, 'Get in touch', 'issues are open', 'ai');
     for (const f of p.featured) out[`project-${f.id}-${t}.svg`] = cards.project(t, f, cards.projectStats(f, d));
     out[`toolbox-${t}.svg`] = cards.toolbox(t, p.toolbox);

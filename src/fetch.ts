@@ -8,15 +8,25 @@ export type Day = { date: string; count: number };
 export type NpmPkg = { name: string; version: string; month: number; year: number; weekly: number[] };
 export type Crate = { name: string; version: string; downloads: number; month: number; weekly: number[] };
 
+/** One upstream repo I contribute to. `avatar` is the owner's avatar as a data URI, since README images can't load remote files. */
+export type Oss = {
+  repo: string;
+  avatar: string;
+  stars: number;
+  prs: number;
+  npm?: { name: string; version: string; month: number; weekly: number[] };
+};
+
 export type Data = {
   today: string;
   github: { followers: number; publicRepos: number; stars: number; starsByRepo: Record<string, number>; total: number; days: Day[] };
   npm: NpmPkg[];
   crates: Crate[];
-  fetched: { github: string; npm: string; crates: string };
+  oss: Oss[];
+  fetched: Record<Source, string>;
 };
 
-export type Source = 'github' | 'npm' | 'crates';
+export type Source = 'github' | 'npm' | 'crates' | 'oss';
 
 async function getJson<T>(url: string, init: RequestInit = {}): Promise<T> {
   for (let attempt = 1; ; attempt++) {
@@ -52,6 +62,16 @@ function githubToken(): string {
   }
 }
 
+async function gql<T>(query: string, variables: Record<string, unknown> = {}): Promise<T> {
+  const res = await getJson<{ data?: T; errors?: { message: string }[] }>('https://api.github.com/graphql', {
+    method: 'POST',
+    headers: { Authorization: `bearer ${githubToken()}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query, variables }),
+  });
+  if (!res.data || res.errors?.length) throw new Error(`GitHub GraphQL: ${res.errors?.map((e) => e.message).join('; ')}`);
+  return res.data;
+}
+
 export async function fetchGithub(p: Profile): Promise<Data['github']> {
   const query = `query($login: String!) {
     user(login: $login) {
@@ -63,20 +83,13 @@ export async function fetchGithub(p: Profile): Promise<Data['github']> {
     }
   }`;
   type Res = {
-    data?: { user: {
+    user: {
       followers: { totalCount: number };
       contributionsCollection: { contributionCalendar: { totalContributions: number; weeks: { contributionDays: { date: string; contributionCount: number }[] }[] } };
       repositories: { totalCount: number; nodes: { name: string; stargazerCount: number }[] };
-    } };
-    errors?: { message: string }[];
+    };
   };
-  const res = await getJson<Res>('https://api.github.com/graphql', {
-    method: 'POST',
-    headers: { Authorization: `bearer ${githubToken()}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query, variables: { login: p.user } }),
-  });
-  if (!res.data) throw new Error(`GitHub GraphQL: ${res.errors?.map((e) => e.message).join('; ')}`);
-  const u = res.data.user;
+  const u = (await gql<Res>(query, { login: p.user })).user;
   const cal = u.contributionsCollection.contributionCalendar;
   const starsByRepo = Object.fromEntries(u.repositories.nodes.map((n) => [n.name, n.stargazerCount]));
   return {
@@ -130,4 +143,46 @@ export async function fetchCrates(p: Profile): Promise<Crate[]> {
   return out.sort((a, b) => b.downloads - a.downloads);
 }
 
-export const fetchers: Record<Source, (p: Profile) => Promise<unknown>> = { github: fetchGithub, npm: fetchNpm, crates: fetchCrates };
+/** Stars, my merged PR count and npm numbers for each upstream repo in profile.contributions. */
+export async function fetchOss(p: Profile): Promise<Oss[]> {
+  // One GraphQL call for every repo: r0/s0, r1/s1, … are aliases for each repo and its PR search.
+  const parts = p.contributions.map((c, i) => {
+    const [owner, name] = c.repo.split('/');
+    const q = `repo:${c.repo} author:${p.user} is:pr is:merged`;
+    return (
+      `r${i}: repository(owner: ${JSON.stringify(owner)}, name: ${JSON.stringify(name)}) { stargazerCount owner { avatarUrl(size: 72) } }\n` +
+      `s${i}: search(query: ${JSON.stringify(q)}, type: ISSUE, first: 1) { issueCount }`
+    );
+  });
+  type Repo = { stargazerCount: number; owner: { avatarUrl: string } };
+  const res = await gql<Record<string, Repo & { issueCount: number }>>(`{ ${parts.join('\n')} }`);
+
+  const out: Oss[] = [];
+  for (const [i, c] of p.contributions.entries()) {
+    const repo = res[`r${i}`];
+    if (!repo) throw new Error(`GitHub has no repo ${c.repo}`);
+    const img = await fetch(repo.owner.avatarUrl, { headers: { 'User-Agent': UA } });
+    if (!img.ok) throw new Error(`${img.status} for the ${c.repo} owner avatar`);
+    const type = img.headers.get('content-type') ?? 'image/png';
+    const avatar = `data:${type};base64,${Buffer.from(await img.arrayBuffer()).toString('base64')}`;
+
+    let npm: Oss['npm'];
+    if (c.npm) {
+      const latest = await getJson<{ version: string }>(`https://registry.npmjs.org/${c.npm}/latest`);
+      type Range = { downloads: { day: string; downloads: number }[] };
+      const r = await getJson<Range>(`https://api.npmjs.org/downloads/range/${daysAgo(84)}:${daysAgo(1)}/${c.npm}`);
+      const byDay = new Map(r.downloads.map((d) => [d.day, d.downloads]));
+      const month = r.downloads.slice(-30).reduce((a, d) => a + d.downloads, 0);
+      npm = { name: c.npm, version: latest.version, month, weekly: weekly(byDay) };
+    }
+    out.push({ repo: c.repo, avatar, stars: repo.stargazerCount, prs: res[`s${i}`].issueCount, npm });
+  }
+  return out;
+}
+
+export const fetchers: Record<Source, (p: Profile) => Promise<unknown>> = {
+  github: fetchGithub,
+  npm: fetchNpm,
+  crates: fetchCrates,
+  oss: fetchOss,
+};

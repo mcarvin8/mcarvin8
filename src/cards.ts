@@ -1,6 +1,6 @@
 // Every card the README shows. Each function returns one finished SVG document for one theme.
-import type { Data, Day } from './fetch.js';
-import type { Featured, Profile, Tag } from './profile.js';
+import type { Data, Day, Oss } from './fetch.js';
+import type { Contribution, Featured, Profile, Tag } from './profile.js';
 import { chip, chipRow, commas, compact, doc, esc, r, sparkline, text, textWidth, theme, wrap, type ThemeName } from './svg.js';
 
 const W = 840;
@@ -236,6 +236,48 @@ export function project(name: ThemeName, f: Featured, ps: ProjectStats): string 
   }
   const alt = `${f.id}: ${f.line} ${[ps.version && `v${ps.version}`, ps.month && `${commas(ps.month)} downloads in the last 30 days`, `${ps.stars} stars`].filter(Boolean).join(', ')}.`;
   return doc(PW, H, alt, body);
+}
+
+// ---------- upstream contribution card ----------
+
+export const prLabel = (n: number) => `${n} ${n === 1 ? 'PR' : 'PRs'} merged`;
+
+export function ossCard(name: ThemeName, c: Contribution, o: Oss): string {
+  const t = theme(name);
+  const H = 172;
+  const pad = 22;
+  const [owner, repo] = c.repo.split('/');
+  let body =
+    `<defs><clipPath id="av"><circle cx="${pad + 17}" cy="36" r="17"/></clipPath></defs>` +
+    frame(t, PW, H) +
+    `<image href="${o.avatar}" x="${pad}" y="19" width="34" height="34" clip-path="url(#av)"/>` +
+    `<circle cx="${pad + 17}" cy="36" r="17" fill="none" stroke="${t.border}"/>`;
+
+  const pr = prLabel(o.prs);
+  const prW = textWidth(pr, 11, { mono: true }) + 20;
+  body += chip(t, PW - pad - prW, 22, pr, 'node', 11).svg;
+
+  const nx = pad + 46;
+  const nameSize = Math.min(17, (PW - nx - pad - prW - 10) / ([...repo].length * 0.6));
+  body +=
+    text(nx, 31, `${owner} /`, { size: 12, fill: t.muted, mono: true }) +
+    text(nx, 50, repo, { size: Math.round(nameSize * 10) / 10, fill: t.fg, weight: 700 });
+
+  wrap(c.line, PW - pad * 2, 13.5, 2).forEach((l, i) => {
+    body += text(pad, 84 + i * 20, l, { size: 13.5, fill: t.muted });
+  });
+
+  body += `<line x1="${pad}" x2="${PW - pad}" y1="126.5" y2="126.5" stroke="${t.border}" stroke-opacity="0.7"/>`;
+  const facts = [`★ ${compact(o.stars)}`, o.npm && `v${o.npm.version}`, o.npm && `${compact(o.npm.month)}/mo`].filter(Boolean).join('  ·  ');
+  body += text(pad, 154, facts, { size: 12.5, fill: t.muted, mono: true });
+  if (o.npm?.weekly.some((v) => v > 0)) body += sparkline(o.npm.weekly, PW - pad - 104, 136, 104, 24, t.tones.node);
+
+  return doc(PW, H, ossAlt(c, o), body);
+}
+
+export function ossAlt(c: Contribution, o: Oss): string {
+  const facts = [prLabel(o.prs) + ' by me', `${commas(o.stars)} stars`, o.npm && `v${o.npm.version}`, o.npm && `${commas(o.npm.month)} npm downloads in the last 30 days`];
+  return `${c.repo}: ${c.line} ${facts.filter(Boolean).join(', ')}.`;
 }
 
 // ---------- toolbox ----------

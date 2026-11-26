@@ -2,7 +2,7 @@
 // with plain Markdown for the parts that need clickable links.
 import type { Data } from './fetch.js';
 import type { Profile } from './profile.js';
-import { projectStats, statsTiles, summarize } from './cards.js';
+import { ossAlt, prLabel, projectStats, statsTiles, summarize } from './cards.js';
 import { commas, esc } from './svg.js';
 
 const pic = (file: string, alt: string, attrs = 'width="100%"') =>
@@ -36,15 +36,15 @@ export function readme(p: Profile, d: Data): string {
 
   out.push(pic('toolbox', `Toolbox: ${p.toolbox.map(([l]) => l).join(', ')}`));
 
-  out.push(pic('label-oss', 'Open-source contributions'));
+  const prs = d.oss.reduce((a, o) => a + o.prs, 0);
+  out.push(pic('label-oss', `Open-source contributions: ${prLabel(prs)} upstream`));
   out.push(
-    `I've contributed to these projects from the open-source Salesforce community:\n\n` +
-      p.contributions
-        .map(([full, line]) => {
-          const [owner, repo] = full.split('/');
-          return `- [**${repo}**](https://github.com/${full}) by [@${owner}](https://github.com/${owner}): ${line}`;
-        })
-        .join('\n'),
+    `<p align="center">\n${p.contributions
+      .flatMap((c) => {
+        const o = d.oss.find((x) => x.repo === c.repo);
+        return o ? [link(`https://github.com/${c.repo}`, pic(`oss-${c.repo.replace('/', '-')}`, ossAlt(c, o), 'width="49%"'))] : [];
+      })
+      .join('\n')}\n</p>`,
   );
 
   out.push(pic('label-contact', 'Get in touch'));

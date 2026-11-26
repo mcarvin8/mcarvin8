@@ -31,17 +31,21 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/toolbox-dark.svg"><img src="assets/toolbox-light.svg" width="100%" alt="Toolbox: TypeScript, Node.js, Rust, Python, Bash, Salesforce, GitLab CI, GitHub Actions, Prometheus"></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/label-oss-dark.svg"><img src="assets/label-oss-light.svg" width="100%" alt="Open-source contributions"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/label-oss-dark.svg"><img src="assets/label-oss-light.svg" width="100%" alt="Open-source contributions: 55 PRs merged upstream"></picture>
 
-I've contributed to these projects from the open-source Salesforce community:
-
-- [**sfdx-git-delta**](https://github.com/scolladon/sfdx-git-delta) by [@scolladon](https://github.com/scolladon): generates Salesforce incremental deployment content from Git changes.
-- [**sf-git-merge-driver**](https://github.com/scolladon/sf-git-merge-driver) by [@scolladon](https://github.com/scolladon): assists with Git merge handling for Salesforce metadata.
-- [**sfdx-hardis**](https://github.com/hardisgroupcom/sfdx-hardis) by [@hardisgroupcom](https://github.com/hardisgroupcom): Salesforce DevOps and Monitoring platform.
-- [**apex-test-list**](https://github.com/wisefoxme/apex-test-list) by [@wisefoxme](https://github.com/wisefoxme): identifies Apex tests to run based on test annotations.
+<p align="center">
+<a href="https://github.com/scolladon/sfdx-git-delta"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/oss-scolladon-sfdx-git-delta-dark.svg"><img src="assets/oss-scolladon-sfdx-git-delta-light.svg" width="49%" alt="scolladon/sfdx-git-delta: Generates Salesforce incremental deployment content from Git changes. 2 PRs merged by me, 579 stars, v6.45.1, 867,577 npm downloads in the last 30 days."></picture></a>
+<a href="https://github.com/scolladon/sf-git-merge-driver"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/oss-scolladon-sf-git-merge-driver-dark.svg"><img src="assets/oss-scolladon-sf-git-merge-driver-light.svg" width="49%" alt="scolladon/sf-git-merge-driver: Assists with Git merge handling for Salesforce metadata. 1 PR merged by me, 29 stars, v2.2.0, 5,649 npm downloads in the last 30 days."></picture></a>
+<a href="https://github.com/hardisgroupcom/sfdx-hardis"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/oss-hardisgroupcom-sfdx-hardis-dark.svg"><img src="assets/oss-hardisgroupcom-sfdx-hardis-light.svg" width="49%" alt="hardisgroupcom/sfdx-hardis: Salesforce DevOps and Monitoring platform. 13 PRs merged by me, 441 stars, v8.27.0, 48,949 npm downloads in the last 30 days."></picture></a>
+<a href="https://github.com/wisefoxme/apex-test-list"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/oss-wisefoxme-apex-test-list-dark.svg"><img src="assets/oss-wisefoxme-apex-test-list-light.svg" width="49%" alt="wisefoxme/apex-test-list: Identifies the Apex tests to run based on test annotations. 39 PRs merged by me, 17 stars, v1.17.0, 8,129 npm downloads in the last 30 days."></picture></a>
+</p>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/label-contact-dark.svg"><img src="assets/label-contact-light.svg" width="100%" alt="Get in touch"></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg"><img src="assets/stats-light.svg" width="100%" alt="307k npm downloads · last 12 months, 3.2k crates.io downloads · all time, 14 npm packages &amp; crates published, 3,334 contributions · last 12 months, 5 days current streak · best 19, 81 stars across 38 public repos"></picture>
+Found a bug or have an idea for one of my projects? Open an issue on that repo. Contributions are welcome from forks.
+
+Want to collaborate on something new or ask something in general? [Open an issue here](https://github.com/mcarvin8/mcarvin8/issues).
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg"><img src="assets/stats-light.svg" width="100%" alt="308k npm downloads · last 12 months, 3.2k crates.io downloads · all time, 14 npm packages &amp; crates published, 3,335 contributions · last 12 months, 5 days current streak · best 19, 81 stars across 38 public repos"></picture>
 
 <p align="center"><sub>Cards drawn by <a href="https://github.com/mcarvin8/mcarvin8/tree/main/src">src/</a> in this repo · numbers redrawn every night by a GitHub Action</sub></p>

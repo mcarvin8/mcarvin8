@@ -1,5 +1,5 @@
 {
-  "_about": "Hand-kept facts for the profile. Numbers that change on their own (contributions, stars, downloads, versions) are fetched by src/fetch.ts and never typed here.",
+  "_about": "Hand-kept facts for the profile. Numbers that change on their own (contributions, stars, downloads, versions, merged PRs) are fetched by src/fetch.ts and never typed here.",
   "user": "mcarvin8",
   "name": "Matt Carvin",
   "hero": {
@@ -81,9 +81,9 @@
     ["sf-gitlab-cicd-template", "GitLab CI/CD template for Salesforce: incremental metadata deployments, sandbox management, and static analysis."]
   ],
   "contributions": [
-    ["scolladon/sfdx-git-delta", "generates Salesforce incremental deployment content from Git changes."],
-    ["scolladon/sf-git-merge-driver", "assists with Git merge handling for Salesforce metadata."],
-    ["hardisgroupcom/sfdx-hardis", "Salesforce DevOps and Monitoring platform."],
-    ["wisefoxme/apex-test-list", "identifies Apex tests to run based on test annotations."]
+    { "repo": "scolladon/sfdx-git-delta", "npm": "sfdx-git-delta", "line": "Generates Salesforce incremental deployment content from Git changes." },
+    { "repo": "scolladon/sf-git-merge-driver", "npm": "sf-git-merge-driver", "line": "Assists with Git merge handling for Salesforce metadata." },
+    { "repo": "hardisgroupcom/sfdx-hardis", "npm": "sfdx-hardis", "line": "Salesforce DevOps and Monitoring platform." },
+    { "repo": "wisefoxme/apex-test-list", "npm": "apextestlist", "line": "Identifies the Apex tests to run based on test annotations." }
   ]
 }
