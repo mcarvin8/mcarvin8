@@ -19,9 +19,6 @@ export function readme(p: Profile, d: Data): string {
   out.push(
     `<p align="center">\n${p.links.map((l) => link(l.url, pic(`badge-${l.id}`, `${l.label} ${l.handle}`, 'height="44"'))).join('\n')}\n</p>`,
   );
-  out.push(pic('stats', statsTiles(s).map((x) => `${x.value} ${x.label}`).join(', ')));
-  out.push(pic('heatmap', `${commas(d.github.total)} contributions in the last year`));
-
   out.push(pic('label-projects', 'Featured projects'));
   out.push(
     `<p align="center">\n${p.featured
@@ -55,6 +52,9 @@ export function readme(p: Profile, d: Data): string {
     `Found a bug or have an idea for one of my projects? Open an issue on that repo. Contributions are welcome from forks.\n\n` +
       `Want to collaborate on something new or ask something in general? [Open an issue here](${gh}/${p.user}/issues).`,
   );
+
+  out.push(pic('stats', statsTiles(s).map((x) => `${x.value} ${x.label}`).join(', ')));
+  out.push(pic('heatmap', `${commas(d.github.total)} contributions in the last year`));
 
   out.push(
     `<p align="center"><sub>Cards drawn by <a href="${gh}/${p.user}/tree/main/src">src/</a> in this repo · numbers redrawn every night by a GitHub Action</sub></p>`,
