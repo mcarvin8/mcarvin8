@@ -46,6 +46,6 @@
 <a href="https://github.com/wisefoxme/apex-test-list"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/oss-wisefoxme-apex-test-list-dark.svg"><img src="assets/oss-wisefoxme-apex-test-list-light.svg" width="49%" alt="wisefoxme/apex-test-list: Generate a list of Apex tests to run based on changes in your project&#39;s metadata for your CI/CD pipelines in Salesforce DX-based projects 39 PRs merged by me, 17 stars, v1.17.0, 8,129 npm downloads in the last 30 days."></picture></a>
 </p>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg"><img src="assets/stats-light.svg" width="100%" alt="308k npm downloads · last 12 months, 3.2k crates.io downloads · all time, 18 packages · npm, crates, PyPI, Docker, 3,344 contributions · last 12 months, 5 days current streak · best 19, 81 stars across 38 public repos"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg"><img src="assets/stats-light.svg" width="100%" alt="308k npm downloads · last 12 months, 3.2k crates.io downloads · all time, 18 packages · npm, crates, PyPI, Docker, 3,346 contributions · last 12 months, 5 days current streak · best 19, 81 stars across 38 public repos"></picture>
 
 <p align="center"><sub>Cards drawn by <a href="https://github.com/mcarvin8/mcarvin8/tree/main/src">src/</a> in this repo · numbers redrawn every night by a GitHub Action</sub></p>
