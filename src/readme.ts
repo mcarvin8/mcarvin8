@@ -2,7 +2,7 @@
 // with plain Markdown for the parts that need clickable links.
 import type { Data } from './fetch.js';
 import type { Profile } from './profile.js';
-import { ossAlt, prLabel, projectStats, statsTiles, summarize } from './cards.js';
+import { ossAlt, prLabel, projectStats, statsTiles, summarize, tileAlt, tileInfo } from './cards.js';
 import { commas, esc } from './svg.js';
 
 const pic = (file: string, alt: string, attrs = 'width="100%"') =>
@@ -36,8 +36,11 @@ export function readme(p: Profile, d: Data): string {
       .join('\n')}\n</p>`,
   );
 
+  out.push(pic('label-more', 'More projects'));
   out.push(
-    `<details>\n<summary><b>More projects</b></summary>\n\n${p.more.map(([repo, line]) => `- [**${repo}**](${gh}/${repo}): ${line}`).join('\n')}\n\n</details>`,
+    `<p align="center">\n${p.more
+      .map((m) => link(`${gh}/${m.repo}`, pic(`tile-${m.repo}`, tileAlt(tileInfo(m, d)), 'width="32%"')))
+      .join('\n')}\n</p>`,
   );
 
   out.push(pic('toolbox', `Toolbox: ${p.toolbox.map(([l]) => l).join(', ')}`));

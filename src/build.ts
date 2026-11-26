@@ -57,6 +57,8 @@ function draw(p: ReturnType<typeof loadProfile>, d: Data): Record<string, string
       if (o) out[`oss-${c.repo.replace('/', '-')}-${t}.svg`] = cards.ossCard(t, c, o);
     }
     for (const f of p.featured) out[`project-${f.id}-${t}.svg`] = cards.project(t, f, cards.projectStats(f, d));
+    out[`label-more-${t}.svg`] = cards.label(t, 'More projects', `${p.more.length} more tools`, 'ts');
+    for (const m of p.more) out[`tile-${m.repo}-${t}.svg`] = cards.tile(t, cards.tileInfo(m, d));
     out[`toolbox-${t}.svg`] = cards.toolbox(t, p.toolbox);
   }
   return out;

@@ -54,7 +54,7 @@ export function summarize(d: Data): Summary {
 
 export type ProjectStats = { version?: string; month: number; stars: number; weekly: number[]; registry: string };
 
-export function projectStats(f: Featured, d: Data): ProjectStats {
+export function projectStats(f: Pick<Featured, 'repo' | 'npm' | 'crates'>, d: Data): ProjectStats {
   const npm = d.npm.filter((p) => f.npm?.includes(p.name));
   const crates = d.crates.filter((c) => f.crates?.includes(c.name));
   const weekly = Array.from({ length: 12 }, (_, i) =>
@@ -278,6 +278,54 @@ export function ossCard(name: ThemeName, c: Contribution, o: Oss): string {
 export function ossAlt(c: Contribution, o: Oss): string {
   const facts = [prLabel(o.prs) + ' by me', o.stars && `${commas(o.stars)} stars`, o.npm && `v${o.npm.version}`, o.npm && `${commas(o.npm.month)} npm downloads in the last 30 days`];
   return `${c.repo}: ${o.description} ${facts.filter(Boolean).join(', ')}.`;
+}
+
+// ---------- "more projects" tile ----------
+
+export const TW = 272;
+
+const LANG_TONE: Record<string, string> = { TypeScript: 'ts', JavaScript: 'node', Rust: 'rust', Python: 'py', Shell: 'bash' };
+
+export type TileInfo = { name: string; description: string; language: string | null; ps: ProjectStats };
+
+export function tileInfo(m: Profile['more'][number], d: Data): TileInfo {
+  const meta = d.github.repoMeta[m.repo];
+  return { name: m.repo, description: meta?.description ?? '', language: meta?.language ?? null, ps: projectStats(m, d) };
+}
+
+export function tile(name: ThemeName, info: TileInfo): string {
+  const t = theme(name);
+  const H = 150;
+  const pad = 18;
+  const { ps } = info;
+  let body = frame(t, TW, H);
+
+  // The name gets the full width; the language sits under it as a GitHub-style dot.
+  const nameSize = Math.min(15, (TW - pad * 2) / ([...info.name].length * 0.6));
+  body += text(pad, 32, info.name, { size: Math.round(nameSize * 10) / 10, fill: t.fg, weight: 700 });
+  if (info.language) {
+    const tone = t.tones[LANG_TONE[info.language] ?? 'muted'] ?? t.muted;
+    body += `<circle cx="${pad + 4}" cy="47" r="4" fill="${tone}"/>` + text(pad + 13, 51, info.language, { size: 11, fill: t.muted, mono: true });
+  }
+
+  wrap(info.description, TW - pad * 2, 12.5, 3).forEach((l, i) => {
+    body += text(pad, 74 + i * 18, l, { size: 12.5, fill: t.muted });
+  });
+
+  body += `<line x1="${pad}" x2="${TW - pad}" y1="120.5" y2="120.5" stroke="${t.border}" stroke-opacity="0.7"/>`;
+  body += text(pad, 139, tileFacts(info, compact).join('  ·  '), { size: 11.5, fill: t.muted, mono: true });
+  if (ps.weekly.some((v) => v > 0)) body += sparkline(ps.weekly, TW - pad - 56, 125, 56, 16, t.accent);
+  return doc(TW, H, tileAlt(info), body);
+}
+
+function tileFacts({ ps }: TileInfo, n: (x: number) => string): string[] {
+  return [ps.version && `v${ps.version}`, ps.month ? `${n(ps.month)}/mo` : '', ps.stars ? `★ ${ps.stars}` : ''].filter((x): x is string => !!x);
+}
+
+export function tileAlt(info: TileInfo): string {
+  const { ps } = info;
+  const facts = [info.language, ps.version && `v${ps.version}`, ps.month && `${commas(ps.month)} downloads in the last 30 days`, ps.stars && `${ps.stars} stars`];
+  return `${info.name}: ${info.description} ${facts.filter(Boolean).join(', ')}.`;
 }
 
 // ---------- toolbox ----------

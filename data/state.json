@@ -1,9 +1,9 @@
 {
  "fetched": {
-  "github": "2026-11-26T19:06:38.845Z",
-  "npm": "2026-11-26T19:06:38.845Z",
-  "crates": "2026-11-26T19:06:38.845Z",
-  "oss": "2026-11-26T19:06:38.845Z"
+  "github": "2026-11-26T19:08:58.548Z",
+  "npm": "2026-11-26T19:08:58.548Z",
+  "crates": "2026-11-26T19:08:58.548Z",
+  "oss": "2026-11-26T19:08:58.548Z"
  },
  "github": {
   "followers": 15,
@@ -48,6 +48,160 @@
    "hashing-scripts": 0,
    "sf-api-version": 0,
    "sfdx-org-model-python": 0
+  },
+  "repoMeta": {
+   "sf-decomposer": {
+    "description": "Decompose Salesforce metadata into granular, VCS-friendly files; recompose for deployment.",
+    "language": "TypeScript"
+   },
+   "apex-code-coverage-transformer": {
+    "description": "Transform Salesforce Apex code coverage JSON for SonarQube, SonarCloud, GitHub, GitLab, Azure, and Bitbucket.",
+    "language": "TypeScript"
+   },
+   "xml-disassembler-node": {
+    "description": "Disassemble XML into smaller, manageable files and reassemble on demand. Built with Node.js and Rust (Neon).",
+    "language": "TypeScript"
+   },
+   "prepare-salesforce-sandboxes": {
+    "description": "Create, refresh, and delete Salesforce sandboxes via Simple Salesforce and GitHub/GitLab workflows.",
+    "language": "Python"
+   },
+   "sf-git-ai-meta-insights": {
+    "description": "Generates AI-written Markdown summaries of Salesforce metadata changes between two Git refs, for PR reviews, deployment audits, and release notes.",
+    "language": "TypeScript"
+   },
+   "sf-package-combiner": {
+    "description": "Merge multiple Salesforce package.xml manifests into a single file for Salesforce CLI deployments.",
+    "language": "TypeScript"
+   },
+   "sfmon": {
+    "description": "Monitor a Salesforce org and expose Prometheus metrics from a long-running Python service.",
+    "language": "Python"
+   },
+   "apex-tests-git-delta": {
+    "description": "Identify Apex test classes for incremental Salesforce deployments by parsing git commit messages.",
+    "language": "TypeScript"
+   },
+   "sf-gitlab-cicd-template": {
+    "description": "GitLab CI/CD template for Salesforce — incremental metadata deployments, sandbox management, static analysis, using the Salesforce CLI, plugins, and shell scripts.",
+    "language": "Shell"
+   },
+   "sf-flow-coverage": {
+    "description": "Get your Salesforce org ready to deploy Flows as active: find uncovered Flows, gate coverage per Flow in pull requests, and scaffold Apex tests.",
+    "language": "TypeScript"
+   },
+   "mcarvin8": {
+    "description": "",
+    "language": "TypeScript"
+   },
+   "3dx": {
+    "description": "3dx — third-party developer experience for Salesforce CLI: a modern, community-built sf plugin template — and, optionally, a matching GitHub Action wrapper and MCP server — using npm, Vitest, and Biome.",
+    "language": "JavaScript"
+   },
+   "config-disassembler-node": {
+    "description": "Node.js bindings, using napi-rs, for the Rust config-disassembler crate.",
+    "language": "TypeScript"
+   },
+   "gitlab-llm-kit": {
+    "description": "TypeScript toolkit for GitLab REST API access and LLM-powered insights (merge requests, issues, pipelines, security, releases, wiki, and more)",
+    "language": "TypeScript"
+   },
+   "xml-disassembler-rust": {
+    "description": "Disassemble XML into smaller, manageable files and reassemble on demand.",
+    "language": "Rust"
+   },
+   "statuspage-prometheus-exporter": {
+    "description": "Monitors Atlassian Statuspage.io pages and exports Prometheus metrics for incidents.",
+    "language": "Python"
+   },
+   "xml2json-disassembler": {
+    "description": "Disassemble XML files into smaller, more manageable JSON files and reassemble the XML when needed.",
+    "language": "TypeScript"
+   },
+   "sfdx-decomposer-python": {
+    "description": "Replaced by https://github.com/mcarvin8/sfdx-decomposer-plugin",
+    "language": "Python"
+   },
+   "sf-decomposer-delta": {
+    "description": "Python script to build a Salesforce manifest from a git diff when using the sf-decomposer plugin",
+    "language": "Python"
+   },
+   "labels-and-workflows-decomposer": {
+    "description": "Replaced by https://github.com/mcarvin8/sfdx-decomposer-plugin",
+    "language": "Python"
+   },
+   "apex-code-coverage-sonarqube": {
+    "description": "Replaced by https://github.com/mcarvin8/apex-code-coverage-transformer",
+    "language": "Python"
+   },
+   "gitlab-rest-api-scripts": {
+    "description": "GitLab REST API bash scripts",
+    "language": "Shell"
+   },
+   "apex-tests-git-delta-python": {
+    "description": "Replaced by https://github.com/mcarvin8/apex-tests-git-delta",
+    "language": "Python"
+   },
+   "biome-win-arm64-segfault": {
+    "description": "Reproduction for biomejs/biome#12909: Biome 2.6.x segfault on win32-arm64",
+    "language": "TypeScript"
+   },
+   "config-disassembler": {
+    "description": "Disassemble XML files into smaller, version-control friendly pieces and reassemble them on demand.",
+    "language": "Rust"
+   },
+   "smart-diff": {
+    "description": "Generates AI-powered natural-language summaries of git diffs for code review.",
+    "language": "TypeScript"
+   },
+   "testrail-prometheus-exporter": {
+    "description": "Prometheus exporter for TestRail test execution metrics.",
+    "language": "Python"
+   },
+   "sf-cat": {
+    "description": "Convert Salesforce Code Analyzer reports to CI/CD-compatible formats",
+    "language": "TypeScript"
+   },
+   "sf-package-list": {
+    "description": "Convert Salesforce package.xml manifests to and from plain-text list format.",
+    "language": "TypeScript"
+   },
+   "xml2json5-disassembler": {
+    "description": "Disassemble XML files into smaller, more manageable JSON5 files and reassemble the XML when needed.",
+    "language": "TypeScript"
+   },
+   "sf-profile-query": {
+    "description": "Query Salesforce profiles on a schedule using GitLab CI/CD",
+    "language": "Python"
+   },
+   "sf-git-package-retrievals": {
+    "description": "Schedule automated metadata retrievals from a Salesforce org into a Git branch using manifest files (package.xml).",
+    "language": "Shell"
+   },
+   "xml2yaml-disassembler": {
+    "description": "Disassemble XML files into smaller, more manageable YAML files and reassemble the XML when needed.",
+    "language": "TypeScript"
+   },
+   "profiles-decomposer": {
+    "description": "Replaced by https://github.com/mcarvin8/sfdx-decomposer-plugin",
+    "language": "Python"
+   },
+   "permission-sets-decomposer": {
+    "description": "Replaced by https://github.com/mcarvin8/sfdx-decomposer-plugin",
+    "language": "Python"
+   },
+   "hashing-scripts": {
+    "description": "Generate the SHA-256 and BLAKE3 hashes",
+    "language": "Python"
+   },
+   "sf-api-version": {
+    "description": "Update sourceApiVersion in sfdx-project.json to max API version available in a Salesforce Org",
+    "language": "Python"
+   },
+   "sfdx-org-model-python": {
+    "description": "Replaced by https://github.com/mcarvin8/sf-org-model-gitlab",
+    "language": "Python"
+   }
   },
   "total": 3339,
   "days": [
@@ -661,11 +815,11 @@
    },
    {
     "date": "2026-04-24",
-    "count": 29
+    "count": 30
    },
    {
     "date": "2026-04-25",
-    "count": 5
+    "count": 4
    },
    {
     "date": "2026-04-26",
@@ -689,11 +843,11 @@
    },
    {
     "date": "2026-05-01",
-    "count": 32
+    "count": 33
    },
    {
     "date": "2026-05-02",
-    "count": 13
+    "count": 12
    },
    {
     "date": "2026-05-03",
@@ -717,11 +871,11 @@
    },
    {
     "date": "2026-05-08",
-    "count": 5
+    "count": 6
    },
    {
     "date": "2026-05-09",
-    "count": 1
+    "count": 0
    },
    {
     "date": "2026-05-10",
@@ -801,11 +955,11 @@
    },
    {
     "date": "2026-05-29",
-    "count": 22
+    "count": 23
    },
    {
     "date": "2026-05-30",
-    "count": 1
+    "count": 0
    },
    {
     "date": "2026-05-31",
@@ -813,11 +967,11 @@
    },
    {
     "date": "2026-06-01",
-    "count": 15
+    "count": 16
    },
    {
     "date": "2026-06-02",
-    "count": 49
+    "count": 48
    },
    {
     "date": "2026-06-03",
@@ -829,11 +983,11 @@
    },
    {
     "date": "2026-06-05",
-    "count": 0
+    "count": 1
    },
    {
     "date": "2026-06-06",
-    "count": 1
+    "count": 0
    },
    {
     "date": "2026-06-07",
@@ -893,11 +1047,11 @@
    },
    {
     "date": "2026-06-21",
-    "count": 1
+    "count": 2
    },
    {
     "date": "2026-06-22",
-    "count": 5
+    "count": 4
    },
    {
     "date": "2026-06-23",
@@ -1005,11 +1159,11 @@
    },
    {
     "date": "2026-07-19",
-    "count": 0
+    "count": 1
    },
    {
     "date": "2026-07-20",
-    "count": 14
+    "count": 13
    },
    {
     "date": "2026-07-21",
@@ -1113,11 +1267,11 @@
    },
    {
     "date": "2026-08-15",
-    "count": 8
+    "count": 9
    },
    {
     "date": "2026-08-16",
-    "count": 18
+    "count": 17
    },
    {
     "date": "2026-08-17",

@@ -17,7 +17,8 @@ export type Profile = {
   crates: { userId: number };
   featured: Featured[];
   toolbox: Tag[];
-  more: [repo: string, line: string][];
+  /** Smaller tiles under the featured cards. Descriptions and languages come from GitHub. */
+  more: Pick<Featured, 'repo' | 'npm' | 'crates'>[];
   contributions: Contribution[];
 };
 

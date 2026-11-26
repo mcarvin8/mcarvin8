@@ -16,18 +16,19 @@
 <a href="https://github.com/mcarvin8/sf-flow-coverage"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-sf-flow-coverage-dark.svg"><img src="assets/project-sf-flow-coverage-light.svg" width="49%" alt="sf-flow-coverage: Gets Salesforce orgs ready to deploy Flows as active. v0.9.3, 2,637 downloads in the last 30 days, 1 stars."></picture></a>
 </p>
 
-<details>
-<summary><b>More projects</b></summary>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/label-more-dark.svg"><img src="assets/label-more-light.svg" width="100%" alt="More projects"></picture>
 
-- [**config-disassembler**](https://github.com/mcarvin8/config-disassembler): Rust crate (with Node bindings via napi-rs) that splits config files into small, VCS-friendly pieces and reassembles them. The engine behind sf-decomposer.
-- [**sfmon**](https://github.com/mcarvin8/sfmon): monitor a Salesforce org and expose Prometheus metrics.
-- [**statuspage-prometheus-exporter**](https://github.com/mcarvin8/statuspage-prometheus-exporter): export Atlassian Statuspage incidents as Prometheus metrics.
-- [**sf-package-combiner**](https://github.com/mcarvin8/sf-package-combiner): merge multiple Salesforce `package.xml` manifests into one for Salesforce CLI deployments.
-- [**sf-package-list**](https://github.com/mcarvin8/sf-package-list): convert `package.xml` manifests to and from plain-text lists.
-- [**apex-tests-git-delta**](https://github.com/mcarvin8/apex-tests-git-delta): pick the Apex test classes to run in incremental deployments by parsing git commit messages.
-- [**sf-gitlab-cicd-template**](https://github.com/mcarvin8/sf-gitlab-cicd-template): GitLab CI/CD template for Salesforce: incremental metadata deployments, sandbox management, and static analysis.
-
-</details>
+<p align="center">
+<a href="https://github.com/mcarvin8/config-disassembler"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-config-disassembler-dark.svg"><img src="assets/tile-config-disassembler-light.svg" width="32%" alt="config-disassembler: Disassemble XML files into smaller, version-control friendly pieces and reassemble them on demand. Rust, v0.12.3, 7,682 downloads in the last 30 days."></picture></a>
+<a href="https://github.com/mcarvin8/sf-package-combiner"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-sf-package-combiner-dark.svg"><img src="assets/tile-sf-package-combiner-light.svg" width="32%" alt="sf-package-combiner: Merge multiple Salesforce package.xml manifests into a single file for Salesforce CLI deployments. TypeScript, v4.4.0, 1,993 downloads in the last 30 days, 2 stars."></picture></a>
+<a href="https://github.com/mcarvin8/apex-tests-git-delta"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-apex-tests-git-delta-dark.svg"><img src="assets/tile-apex-tests-git-delta-light.svg" width="32%" alt="apex-tests-git-delta: Identify Apex test classes for incremental Salesforce deployments by parsing git commit messages. TypeScript, v5.4.0, 804 downloads in the last 30 days, 2 stars."></picture></a>
+<a href="https://github.com/mcarvin8/sf-git-ai-meta-insights"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-sf-git-ai-meta-insights-dark.svg"><img src="assets/tile-sf-git-ai-meta-insights-light.svg" width="32%" alt="sf-git-ai-meta-insights: Generates AI-written Markdown summaries of Salesforce metadata changes between two Git refs, for PR reviews, deployment audits, and release notes. TypeScript, v5.8.0, 954 downloads in the last 30 days, 2 stars."></picture></a>
+<a href="https://github.com/mcarvin8/sf-package-list"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-sf-package-list-dark.svg"><img src="assets/tile-sf-package-list-light.svg" width="32%" alt="sf-package-list: Convert Salesforce package.xml manifests to and from plain-text list format. TypeScript, v3.4.0, 754 downloads in the last 30 days."></picture></a>
+<a href="https://github.com/mcarvin8/sf-cat"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-sf-cat-dark.svg"><img src="assets/tile-sf-cat-light.svg" width="32%" alt="sf-cat: Convert Salesforce Code Analyzer reports to CI/CD-compatible formats TypeScript, v2.1.2, 96 downloads in the last 30 days."></picture></a>
+<a href="https://github.com/mcarvin8/sfmon"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-sfmon-dark.svg"><img src="assets/tile-sfmon-light.svg" width="32%" alt="sfmon: Monitor a Salesforce org and expose Prometheus metrics from a long-running Python service. Python, 2 stars."></picture></a>
+<a href="https://github.com/mcarvin8/statuspage-prometheus-exporter"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-statuspage-prometheus-exporter-dark.svg"><img src="assets/tile-statuspage-prometheus-exporter-light.svg" width="32%" alt="statuspage-prometheus-exporter: Monitors Atlassian Statuspage.io pages and exports Prometheus metrics for incidents. Python, 1 stars."></picture></a>
+<a href="https://github.com/mcarvin8/sf-gitlab-cicd-template"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-sf-gitlab-cicd-template-dark.svg"><img src="assets/tile-sf-gitlab-cicd-template-light.svg" width="32%" alt="sf-gitlab-cicd-template: GitLab CI/CD template for Salesforce — incremental metadata deployments, sandbox management, static analysis, using the Salesforce CLI, plugins, and shell scripts. Shell, 2 stars."></picture></a>
+</p>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/toolbox-dark.svg"><img src="assets/toolbox-light.svg" width="100%" alt="Toolbox: TypeScript, Node.js, Rust, Python, Bash, Salesforce, GitLab CI, GitHub Actions, Prometheus"></picture>
 

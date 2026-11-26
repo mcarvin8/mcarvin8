@@ -19,9 +19,12 @@ export type Oss = {
   npm?: { name: string; version: string; month: number; weekly: number[] };
 };
 
+/** GitHub's description and main language for one of my repos. */
+export type RepoMeta = { description: string; language: string | null };
+
 export type Data = {
   today: string;
-  github: { followers: number; publicRepos: number; stars: number; starsByRepo: Record<string, number>; total: number; days: Day[] };
+  github: { followers: number; publicRepos: number; stars: number; starsByRepo: Record<string, number>; repoMeta: Record<string, RepoMeta>; total: number; days: Day[] };
   npm: NpmPkg[];
   crates: Crate[];
   oss: Oss[];
@@ -80,7 +83,7 @@ export async function fetchGithub(p: Profile): Promise<Data['github']> {
       followers { totalCount }
       contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { date contributionCount } } } }
       repositories(ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC, first: 100, orderBy: {field: STARGAZERS, direction: DESC}) {
-        totalCount nodes { name stargazerCount }
+        totalCount nodes { name stargazerCount description primaryLanguage { name } }
       }
     }
   }`;
@@ -88,7 +91,7 @@ export async function fetchGithub(p: Profile): Promise<Data['github']> {
     user: {
       followers: { totalCount: number };
       contributionsCollection: { contributionCalendar: { totalContributions: number; weeks: { contributionDays: { date: string; contributionCount: number }[] }[] } };
-      repositories: { totalCount: number; nodes: { name: string; stargazerCount: number }[] };
+      repositories: { totalCount: number; nodes: { name: string; stargazerCount: number; description: string | null; primaryLanguage: { name: string } | null }[] };
     };
   };
   const u = (await gql<Res>(query, { login: p.user })).user;
@@ -99,6 +102,9 @@ export async function fetchGithub(p: Profile): Promise<Data['github']> {
     publicRepos: u.repositories.totalCount,
     stars: u.repositories.nodes.reduce((a, n) => a + n.stargazerCount, 0),
     starsByRepo,
+    repoMeta: Object.fromEntries(
+      u.repositories.nodes.map((n) => [n.name, { description: n.description?.trim() ?? '', language: n.primaryLanguage?.name ?? null }]),
+    ),
     total: cal.totalContributions,
     days: cal.weeks.flatMap((w) => w.contributionDays.map((d) => ({ date: d.date, count: d.contributionCount }))),
   };

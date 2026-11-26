@@ -79,13 +79,15 @@
     ["Prometheus", "prom"]
   ],
   "more": [
-    ["config-disassembler", "Rust crate (with Node bindings via napi-rs) that splits config files into small, VCS-friendly pieces and reassembles them. The engine behind sf-decomposer."],
-    ["sfmon", "monitor a Salesforce org and expose Prometheus metrics."],
-    ["statuspage-prometheus-exporter", "export Atlassian Statuspage incidents as Prometheus metrics."],
-    ["sf-package-combiner", "merge multiple Salesforce `package.xml` manifests into one for Salesforce CLI deployments."],
-    ["sf-package-list", "convert `package.xml` manifests to and from plain-text lists."],
-    ["apex-tests-git-delta", "pick the Apex test classes to run in incremental deployments by parsing git commit messages."],
-    ["sf-gitlab-cicd-template", "GitLab CI/CD template for Salesforce: incremental metadata deployments, sandbox management, and static analysis."]
+    { "repo": "config-disassembler", "crates": ["config-disassembler"], "npm": ["config-disassembler"] },
+    { "repo": "sf-package-combiner", "npm": ["sf-package-combiner"] },
+    { "repo": "apex-tests-git-delta", "npm": ["apex-tests-git-delta"] },
+    { "repo": "sf-git-ai-meta-insights", "npm": ["sf-git-ai-meta-insights"] },
+    { "repo": "sf-package-list", "npm": ["sf-package-list"] },
+    { "repo": "sf-cat", "npm": ["sf-cat"] },
+    { "repo": "sfmon" },
+    { "repo": "statuspage-prometheus-exporter" },
+    { "repo": "sf-gitlab-cicd-template" }
   ],
   "contributions": [
     { "repo": "scolladon/sfdx-git-delta", "npm": "sfdx-git-delta" },
